@@ -14,9 +14,9 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #f5f5f5;
             min-height: 100vh;
-            padding: 5px;
+            padding: 0;
             overflow-x: hidden;
         }
         
@@ -24,10 +24,9 @@
             max-width: 100%;
             margin: 0 auto;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
         .header {
@@ -35,6 +34,9 @@
             color: white;
             padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .header h1 {
@@ -44,93 +46,50 @@
         
         .balance-display {
             background: rgba(255,255,255,0.2);
-            padding: 5px; /* 缩小垂直边距 */
+            padding: 8px;
             border-radius: 10px;
             margin-top: 10px;
-            width: 75%; /* 缩小宽度 */
-            margin: 10px auto; /* 居中 */
+            width: 80%;
+            margin: 10px auto;
         }
         
         .balance-amount {
-            font-size: 18px; /* 缩小字体 */
+            font-size: 20px;
             font-weight: bold;
         }
         
-        .nav-section {
-            padding: 15px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .view-toggle {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 10px;
-        }
-        
-        .toggle-btn {
+        .content {
             flex: 1;
-            padding: 8px;
-            border: 2px solid #667eea;
-            background: white;
-            color: #667eea;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 12px;
-        }
-        
-        .toggle-btn.active {
-            background: #667eea;
-            color: white;
-        }
-        
-        .date-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .date-display {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .nav-btn {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
+            overflow-y: auto;
+            padding: 15px;
         }
         
         .input-section {
+            background: white;
+            border-radius: 10px;
             padding: 15px;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .input-group {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .input-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 500;
             color: #333;
-            font-size: 14px;
+            font-size: 16px;
         }
         
         .input-group input, .input-group select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 2px solid #e1e5e9;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 16px;
             transition: border-color 0.3s;
         }
         
@@ -141,7 +100,7 @@
         
         .type-date-input {
             display: flex;
-            gap: 5px;
+            gap: 10px;
         }
         
         .type-input {
@@ -154,7 +113,7 @@
         
         .amount-category-input {
             display: flex;
-            gap: 5px;
+            gap: 10px;
         }
         
         .amount-input {
@@ -167,7 +126,7 @@
         
         .desc-add-input {
             display: flex;
-            gap: 5px;
+            gap: 10px;
             align-items: flex-end;
         }
         
@@ -176,12 +135,12 @@
         }
         
         .add-btn-container {
-            flex: 0 0 auto; /* 固定宽度 */
+            flex: 0 0 auto;
         }
         
         .btn {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             border: none;
             border-radius: 8px;
             font-size: 16px;
@@ -206,14 +165,37 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         
+        .view-toggle {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .toggle-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .toggle-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
         .year-view {
-            padding: 15px;
+            padding: 15px 0;
         }
         
         .year-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 15px;
         }
         
@@ -221,10 +203,10 @@
             background: #f8f9fa;
             border: 2px solid #e9ecef;
             border-radius: 8px;
-            padding: 10px;
+            padding: 12px;
             cursor: pointer;
             transition: all 0.3s;
-            min-height: 70px;
+            min-height: 80px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -245,12 +227,12 @@
         
         .month-name {
             font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 3px;
+            font-size: 16px;
+            margin-bottom: 5px;
         }
         
         .month-amount {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 600;
         }
         
@@ -263,13 +245,13 @@
         }
         
         .calendar-view {
-            padding: 15px;
+            padding: 15px 0;
         }
         
         .month-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
+            gap: 6px;
             margin-bottom: 15px;
         }
         
@@ -277,18 +259,18 @@
             text-align: center;
             font-weight: 600;
             color: #666;
-            padding: 6px 0;
-            font-size: 10px;
+            padding: 8px 0;
+            font-size: 12px;
         }
         
         .day-box {
             background: #f8f9fa;
             border: 2px solid #e9ecef;
             border-radius: 8px;
-            padding: 6px;
+            padding: 8px;
             cursor: pointer;
             transition: all 0.3s;
-            min-height: 50px;
+            min-height: 60px;
             position: relative;
         }
         
@@ -305,12 +287,12 @@
         
         .day-number {
             font-weight: 600;
-            font-size: 12px;
-            margin-bottom: 3px;
+            font-size: 14px;
+            margin-bottom: 5px;
         }
         
         .day-amount {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 600;
         }
         
@@ -323,7 +305,7 @@
         }
         
         .list-view {
-            padding: 15px;
+            padding: 15px 0;
         }
         
         .records-list {
@@ -335,8 +317,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px;
-            margin-bottom: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
             background: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid #667eea;
@@ -348,19 +330,19 @@
         
         .record-type {
             font-weight: 600;
-            margin-bottom: 3px;
-            font-size: 14px;
+            margin-bottom: 5px;
+            font-size: 16px;
         }
         
         .record-category {
-            font-size: 11px;
+            font-size: 13px;
             color: #666;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
         
         .record-amount {
             font-weight: 700;
-            font-size: 16px;
+            font-size: 18px;
         }
         
         .income {
@@ -375,11 +357,11 @@
             background: #dc3545;
             color: white;
             border: none;
-            padding: 6px 10px;
+            padding: 8px 12px;
             border-radius: 5px;
             cursor: pointer;
             margin-left: 8px;
-            font-size: 12px;
+            font-size: 14px;
         }
         
         .edit-btn-small {
@@ -391,14 +373,14 @@
             color: #666;
             padding: 30px 15px;
             font-style: italic;
-            font-size: 14px;
+            font-size: 16px;
         }
         
         .summary {
             display: flex;
             justify-content: space-around;
             margin-bottom: 15px;
-            padding: 12px;
+            padding: 15px;
             background: #f8f9fa;
             border-radius: 8px;
         }
@@ -408,7 +390,7 @@
         }
         
         .summary-value {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
         }
         
@@ -421,26 +403,25 @@
         }
         
         .category-manager {
-            margin-top: 12px;
-            padding: 12px;
+            margin-top: 15px;
+            padding: 15px;
             background: #e8f5e8;
             border-radius: 8px;
-            display: none; /* 默认隐藏 */
         }
         
         .category-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin: 8px 0;
+            gap: 8px;
+            margin: 10px 0;
         }
         
         .category-tag {
             background: #28a745;
             color: white;
-            padding: 4px 8px;
+            padding: 6px 12px;
             border-radius: 15px;
-            font-size: 11px;
+            font-size: 14px;
             cursor: pointer;
             position: relative;
             display: inline-block;
@@ -459,8 +440,8 @@
         
         .add-category-input {
             display: flex;
-            gap: 8px;
-            margin-top: 8px;
+            gap: 10px;
+            margin-top: 10px;
         }
         
         .add-category-input input {
@@ -471,43 +452,31 @@
             background: #28a745;
             color: white;
             border: none;
-            padding: 6px 10px;
+            padding: 8px 12px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 12px;
-        }
-        
-        .category-toggle-btn {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 12px;
-            margin-bottom: 8px;
-            width: 100%;
+            font-size: 14px;
         }
         
         .export-import-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-top: 12px;
-            display: none; /* 默认隐藏 */
+            margin-top: 15px;
+            padding: 15px;
+            background: #e8f5f5;
+            border-radius: 8px;
         }
         
         .export-btn, .import-btn {
             flex: 1;
-            padding: 8px;
+            padding: 10px;
             border: 2px solid #667eea;
             background: white;
             color: #667eea;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 12px;
-            min-width: 100px;
+            font-size: 14px;
+            min-width: 120px;
+            margin-bottom: 10px;
         }
         
         .export-btn:hover, .import-btn:hover {
@@ -519,49 +488,69 @@
             display: none;
         }
         
-        .export-toggle-btn {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 12px;
-            margin-bottom: 8px;
-            width: 100%;
-        }
-        
         .export-options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 12px;
         }
         
         .export-option {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
         }
         
         .export-option label {
             font-weight: 500;
             color: #333;
-            font-size: 14px;
+            font-size: 16px;
         }
         
         .export-option select, .export-option input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             border: 2px solid #e1e5e9;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 16px;
+        }
+        
+        /* 底部导航 */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            border-top: 1px solid #eee;
+            padding: 10px 0;
+            position: sticky;
+            bottom: 0;
+            z-index: 100;
+        }
+        
+        .nav-item {
+            text-align: center;
+            flex: 1;
+            padding: 8px;
+            cursor: pointer;
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .nav-item.active {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .nav-item i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 4px;
         }
         
         /* 详情页面样式 */
         .detail-view {
             display: none;
-            padding: 15px;
+            padding: 15px 0;
         }
         
         .detail-header {
@@ -569,10 +558,10 @@
         }
         
         .detail-date {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             color: #333;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .detail-stats {
@@ -584,13 +573,13 @@
         .stat-item {
             flex: 1;
             text-align: center;
-            padding: 12px;
+            padding: 15px;
             border-radius: 8px;
             background: #f8f9fa;
         }
         
         .stat-value {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
         }
         
@@ -606,11 +595,11 @@
             background: #6c757d;
             color: white;
             border: none;
-            padding: 5px 10px; /* 缩小按钮 */
+            padding: 8px 15px;
             border-radius: 6px;
             cursor: pointer;
-            margin-bottom: 12px;
-            font-size: 12px; /* 缩小字体 */
+            margin-bottom: 15px;
+            font-size: 14px;
         }
         
         /* 详情列表视图 */
@@ -624,8 +613,8 @@
         
         .detail-calendar-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
             margin-top: 15px;
         }
         
@@ -633,24 +622,24 @@
             background: #f8f9fa;
             border: 1px solid #e9ecef;
             border-radius: 8px;
-            padding: 10px;
+            padding: 12px;
         }
         
         .detail-record-type {
             font-weight: 600;
-            margin-bottom: 4px;
-            font-size: 13px;
+            margin-bottom: 6px;
+            font-size: 15px;
         }
         
         .detail-record-category {
-            font-size: 10px;
+            font-size: 12px;
             color: #666;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         
         .detail-record-amount {
             font-weight: bold;
-            font-size: 14px;
+            font-size: 16px;
         }
         
         .detail-income {
@@ -662,9 +651,9 @@
         }
         
         .detail-description {
-            font-size: 10px;
+            font-size: 12px;
             color: #888;
-            margin-top: 4px;
+            margin-top: 6px;
         }
         
         /* 编辑弹窗样式 */
@@ -703,107 +692,19 @@
         
         .modal-buttons {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             margin-top: 15px;
         }
         
         /* 手机端特殊优化 */
         @media (max-width: 768px) {
-            body {
-                padding: 0;
+            .type-date-input, .amount-category-input, .desc-add-input {
+                flex-direction: column;
+                gap: 10px;
             }
             
-            .container {
-                border-radius: 0;
-                height: auto;
-                min-height: 100vh;
-                display: block;
-            }
-            
-            .nav-section {
-                padding: 10px;
-            }
-            
-            .view-toggle {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            
-            .toggle-btn {
+            .type-input, .date-input, .amount-input, .category-input, .desc-input {
                 flex: 1;
-                min-width: 30%;
-                padding: 6px;
-                font-size: 11px;
-            }
-            
-            .date-nav {
-                flex-direction: row;
-            }
-            
-            .date-display {
-                font-size: 14px;
-            }
-            
-            .nav-btn {
-                padding: 5px 10px;
-                font-size: 11px;
-            }
-            
-            .input-section {
-                padding: 12px;
-            }
-            
-            .input-group {
-                margin-bottom: 8px;
-            }
-            
-            .input-group label {
-                font-size: 13px;
-            }
-            
-            .input-group input, .input-group select {
-                padding: 8px;
-                font-size: 13px;
-            }
-            
-            .type-date-input {
-                flex-direction: row;
-                gap: 8px;
-            }
-            
-            .type-input {
-                flex: 1;
-            }
-            
-            .date-input {
-                flex: 1;
-            }
-            
-            .amount-category-input {
-                flex-direction: row;
-                gap: 8px;
-            }
-            
-            .amount-input {
-                flex: 1;
-            }
-            
-            .category-input {
-                flex: 1;
-            }
-            
-            .desc-add-input {
-                flex-direction: row;
-                gap: 8px;
-                align-items: flex-end;
-            }
-            
-            .desc-input {
-                flex: 1;
-            }
-            
-            .add-btn-container {
-                flex: 0 0 auto;
             }
             
             .year-grid {
@@ -811,129 +712,59 @@
             }
             
             .month-box {
-                min-height: 60px;
-                padding: 8px;
+                min-height: 70px;
+                padding: 10px;
             }
             
             .month-name {
-                font-size: 12px;
+                font-size: 14px;
             }
             
             .month-amount {
-                font-size: 9px;
-            }
-            
-            .calendar-view {
-                padding: 10px;
-            }
-            
-            .month-grid {
-                gap: 3px;
+                font-size: 11px;
             }
             
             .day-box {
-                min-height: 40px;
-                padding: 4px;
+                min-height: 50px;
+                padding: 6px;
             }
             
             .day-number {
-                font-size: 10px;
+                font-size: 12px;
             }
             
             .day-amount {
-                font-size: 8px;
-            }
-            
-            .list-view {
-                padding: 10px;
-            }
-            
-            .records-list {
-                max-height: 300px;
-                overflow-y: auto;
+                font-size: 9px;
             }
             
             .record-item {
-                padding: 10px;
-                margin-bottom: 6px;
+                padding: 12px;
+                margin-bottom: 8px;
             }
             
             .record-type {
-                font-size: 13px;
+                font-size: 14px;
             }
             
             .record-category {
-                font-size: 10px;
+                font-size: 12px;
             }
             
             .record-amount {
-                font-size: 15px;
-            }
-            
-            .delete-btn, .edit-btn-small {
-                padding: 5px 8px;
-                font-size: 11px;
-            }
-            
-            .summary {
-                margin-bottom: 12px;
-                padding: 10px;
-            }
-            
-            .summary-value {
                 font-size: 16px;
             }
             
-            .category-manager {
-                padding: 10px;
-            }
-            
-            .category-tag {
-                font-size: 10px;
-                padding: 3px 6px;
-            }
-            
-            .add-category-input {
-                flex-direction: row;
-                gap: 5px;
-            }
-            
-            .add-category-btn {
-                padding: 5px 8px;
-                font-size: 11px;
-            }
-            
-            .export-import-section {
-                flex-direction: column;
-                gap: 5px;
+            .delete-btn, .edit-btn-small {
+                padding: 6px 10px;
+                font-size: 12px;
             }
             
             .export-btn, .import-btn {
                 min-width: 100%;
             }
             
-            .detail-view {
-                padding: 10px;
-            }
-            
-            .detail-date {
-                font-size: 18px;
-            }
-            
-            .detail-stats {
-                gap: 10px;
-            }
-            
-            .stat-item {
-                padding: 10px;
-            }
-            
-            .stat-value {
-                font-size: 18px;
-            }
-            
             .detail-calendar-grid {
-                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             }
             
             .modal-content {
@@ -958,228 +789,246 @@
             </div>
         </div>
         
-        <div class="nav-section">
-            <div class="view-toggle">
-                <button class="toggle-btn active" onclick="switchView('year')">年视图</button>
-                <button class="toggle-btn" onclick="switchView('calendar')">月视图</button>
-                <button class="toggle-btn" onclick="switchView('list')">列表视图</button>
+        <div class="content">
+            <!-- 输入页面 -->
+            <div id="inputView" class="input-view">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label>记账类型和日期</label>
+                        <div class="type-date-input">
+                            <select id="recordType" class="type-input">
+                                <option value="expense">支出</option>
+                                <option value="income">收入</option>
+                            </select>
+                            <input type="date" id="recordDate" value="" class="date-input">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>金额和分类</label>
+                        <div class="amount-category-input">
+                            <input type="number" id="amount" placeholder="金额" step="0.01" class="amount-input">
+                            <select id="category" class="category-input">
+                                <option value="餐饮">餐饮</option>
+                                <option value="购物">购物</option>
+                                <option value="交通">交通</option>
+                                <option value="娱乐">娱乐</option>
+                                <option value="医疗">医疗</option>
+                                <option value="工资">工资</option>
+                                <option value="奖金">奖金</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>备注和添加</label>
+                        <div class="desc-add-input">
+                            <input type="text" id="description" placeholder="请输入备注（可选）" class="desc-input">
+                            <div class="add-btn-container">
+                                <button class="btn add-btn" onclick="addRecord()">添加记录</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="date-nav">
-                <button class="nav-btn" id="prevBtn" onclick="prevPeriod()">&lt; 上年</button>
-                <div class="date-display" id="currentDate">2024年</div>
-                <button class="nav-btn" id="nextBtn" onclick="nextPeriod()">下年 &gt;</button>
+            <!-- 浏览页面 -->
+            <div id="browseView" class="browse-view" style="display: none;">
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="switchView('year')">年视图</button>
+                    <button class="toggle-btn" onclick="switchView('calendar')">月视图</button>
+                    <button class="toggle-btn" onclick="switchView('list')">列表视图</button>
+                </div>
+                
+                <div id="yearView" class="year-view">
+                    <!-- 年视图将动态生成 -->
+                </div>
+                
+                <div id="calendarView" class="calendar-view" style="display: none;">
+                    <!-- 日历视图将动态生成 -->
+                </div>
+                
+                <div id="listView" class="list-view" style="display: none;">
+                    <h3 class="section-title" style="font-size: 18px; margin-bottom: 15px;">记账记录</h3>
+                    
+                    <div class="summary">
+                        <div class="summary-item">
+                            <div>总收入</div>
+                            <div class="summary-value income-summary">¥0.00</div>
+                        </div>
+                        <div class="summary-item">
+                            <div>总支出</div>
+                            <div class="summary-value expense-summary">¥0.00</div>
+                        </div>
+                    </div>
+                    
+                    <div id="recordsList" class="records-list">
+                        <div class="empty-records">暂无记账记录</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 设置页面 -->
+            <div id="settingsView" class="settings-view" style="display: none;">
+                <div class="category-manager">
+                    <h4 style="font-size: 18px; margin-bottom: 10px;">🏷️ 自定义分类标签</h4>
+                    <div class="category-list" id="categoryList">
+                        <!-- 分类标签将动态生成 -->
+                    </div>
+                    <div class="add-category-input">
+                        <input type="text" id="newCategory" placeholder="添加新分类">
+                        <button class="add-category-btn" onclick="addCustomCategory()">添加</button>
+                    </div>
+                </div>
+                
+                <div class="export-import-section">
+                    <h4 style="font-size: 18px; margin-bottom: 10px;">📤 导出导入功能</h4>
+                    <button class="export-btn" onclick="exportRecords('json')">导出JSON</button>
+                    <button class="export-btn" onclick="exportRecords('excel')">导出Excel</button>
+                    <button class="import-btn" onclick="document.getElementById('importFile').click()">导入记录</button>
+                    <input type="file" id="importFile" class="import-file-input" accept=".json,.xlsx,.csv">
+                    
+                    <div class="export-options">
+                        <div class="export-option">
+                            <label>导出类型</label>
+                            <select id="exportType">
+                                <option value="all">全部记录</option>
+                                <option value="year">某一年</option>
+                                <option value="month">某个月</option>
+                                <option value="day">某一天</option>
+                            </select>
+                        </div>
+                        <div class="export-option" id="yearOption" style="display:none;">
+                            <label>选择年份</label>
+                            <input type="number" id="exportYear" min="2000" max="2100" value="2024">
+                        </div>
+                        <div class="export-option" id="monthOption" style="display:none;">
+                            <label>选择月份</label>
+                            <select id="exportMonth">
+                                <option value="1">1月</option>
+                                <option value="2">2月</option>
+                                <option value="3">3月</option>
+                                <option value="4">4月</option>
+                                <option value="5">5月</option>
+                                <option value="6">6月</option>
+                                <option value="7">7月</option>
+                                <option value="8">8月</option>
+                                <option value="9">9月</option>
+                                <option value="10">10月</option>
+                                <option value="11">11月</option>
+                                <option value="12">12月</option>
+                            </select>
+                        </div>
+                        <div class="export-option" id="dayOption" style="display:none;">
+                            <label>选择日期</label>
+                            <input type="date" id="exportDay" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="detailView" class="detail-view">
+                <button class="back-btn" onclick="backToMainView()">← 返回</button>
+                
+                <div class="detail-header">
+                    <div class="detail-date" id="detailDate">2024年12月15日</div>
+                    
+                    <div class="detail-stats">
+                        <div class="stat-item">
+                            <div>总收入</div>
+                            <div class="stat-value income-stat" id="detailIncome">¥0.00</div>
+                        </div>
+                        <div class="stat-item">
+                            <div>总支出</div>
+                            <div class="stat-value expense-stat" id="detailExpense">¥0.00</div>
+                        </div>
+                        <div class="stat-item">
+                            <div>净收入</div>
+                            <div class="stat-value" id="detailNet">¥0.00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-toggle">
+                        <button class="toggle-btn active" onclick="switchDetailView('list')">列表查看</button>
+                        <button class="toggle-btn" onclick="switchDetailView('calendar')">方块查看</button>
+                    </div>
+                </div>
+                
+                <div id="detailListView" class="detail-list-view">
+                    <div id="detailRecordsList" class="records-list">
+                        <!-- 详情记录列表 -->
+                    </div>
+                </div>
+                
+                <div id="detailCalendarView" class="detail-calendar-view">
+                    <div id="detailCalendarGrid" class="detail-calendar-grid">
+                        <!-- 详情方块视图 -->
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="input-section">
-            <div class="input-group">
-                <label>记账类型和日期</label>
-                <div class="type-date-input">
-                    <select id="recordType" class="type-input">
+
+        <!-- 底部导航 -->
+        <div class="bottom-nav">
+            <div class="nav-item active" onclick="switchPage('input')">
+                <i>📝</i>
+                <span>记账</span>
+            </div>
+            <div class="nav-item" onclick="switchPage('browse')">
+                <i>📊</i>
+                <span>浏览</span>
+            </div>
+            <div class="nav-item" onclick="switchPage('settings')">
+                <i>⚙️</i>
+                <span>设置</span>
+            </div>
+        </div>
+
+        <!-- 编辑记录弹窗 -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeEditModal()">&times;</span>
+                <h2 style="margin-bottom: 15px;">编辑记录</h2>
+                <div class="input-group">
+                    <label>记账类型</label>
+                    <select id="editRecordType">
                         <option value="expense">支出</option>
                         <option value="income">收入</option>
                     </select>
-                    <input type="date" id="recordDate" value="" class="date-input">
                 </div>
-            </div>
-            
-            <div class="input-group">
-                <label>金额和分类</label>
-                <div class="amount-category-input">
-                    <input type="number" id="amount" placeholder="金额" step="0.01" class="amount-input">
-                    <select id="category" class="category-input">
-                        <option value="餐饮">餐饮</option>
-                        <option value="购物">购物</option>
-                        <option value="交通">交通</option>
-                        <option value="娱乐">娱乐</option>
-                        <option value="医疗">医疗</option>
-                        <option value="工资">工资</option>
-                        <option value="奖金">奖金</option>
-                        <option value="其他">其他</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="input-group">
-                <label>备注和添加</label>
-                <div class="desc-add-input">
-                    <input type="text" id="description" placeholder="请输入备注（可选）" class="desc-input">
-                    <div class="add-btn-container">
-                        <button class="btn add-btn" onclick="addRecord()">添加记录</button>
-                    </div>
-                </div>
-            </div>
-            
-            <button class="category-toggle-btn" onclick="toggleCategoryManager()">🏷️ 自定义分类标签</button>
-            <div class="category-manager" id="categoryManager">
-                <h4 style="font-size: 14px;">🏷️ 自定义分类标签</h4>
-                <div class="category-list" id="categoryList">
-                    <!-- 分类标签将动态生成 -->
-                </div>
-                <div class="add-category-input">
-                    <input type="text" id="newCategory" placeholder="添加新分类">
-                    <button class="add-category-btn" onclick="addCustomCategory()">添加</button>
-                </div>
-            </div>
-            
-            <button class="export-toggle-btn" onclick="toggleExportImport()">📤 导出导入功能</button>
-            <div class="export-import-section" id="exportImportSection">
-                <button class="export-btn" onclick="exportRecords('json')">导出JSON</button>
-                <button class="export-btn" onclick="exportRecords('excel')">导出Excel</button>
-                <button class="import-btn" onclick="document.getElementById('importFile').click()">导入记录</button>
-                <input type="file" id="importFile" class="import-file-input" accept=".json,.xlsx,.csv">
                 
-                <div class="export-options">
-                    <div class="export-option">
-                        <label>导出类型</label>
-                        <select id="exportType">
-                            <option value="all">全部记录</option>
-                            <option value="year">某一年</option>
-                            <option value="month">某个月</option>
-                            <option value="day">某一天</option>
+                <div class="input-group">
+                    <label>日期</label>
+                    <input type="date" id="editRecordDate" value="">
+                </div>
+                
+                <div class="input-group">
+                    <label>金额和分类</label>
+                    <div class="amount-category-input">
+                        <input type="number" id="editAmount" placeholder="金额" step="0.01" class="amount-input">
+                        <select id="editCategory" class="category-input">
+                            <option value="餐饮">餐饮</option>
+                            <option value="购物">购物</option>
+                            <option value="交通">交通</option>
+                            <option value="娱乐">娱乐</option>
+                            <option value="医疗">医疗</option>
+                            <option value="工资">工资</option>
+                            <option value="奖金">奖金</option>
+                            <option value="其他">其他</option>
                         </select>
                     </div>
-                    <div class="export-option" id="yearOption" style="display:none;">
-                        <label>选择年份</label>
-                        <input type="number" id="exportYear" min="2000" max="2100" value="2024">
-                    </div>
-                    <div class="export-option" id="monthOption" style="display:none;">
-                        <label>选择月份</label>
-                        <select id="exportMonth">
-                            <option value="1">1月</option>
-                            <option value="2">2月</option>
-                            <option value="3">3月</option>
-                            <option value="4">4月</option>
-                            <option value="5">5月</option>
-                            <option value="6">6月</option>
-                            <option value="7">7月</option>
-                            <option value="8">8月</option>
-                            <option value="9">9月</option>
-                            <option value="10">10月</option>
-                            <option value="11">11月</option>
-                            <option value="12">12月</option>
-                        </select>
-                    </div>
-                    <div class="export-option" id="dayOption" style="display:none;">
-                        <label>选择日期</label>
-                        <input type="date" id="exportDay" value="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="yearView" class="year-view">
-            <!-- 年视图将动态生成 -->
-        </div>
-        
-        <div id="calendarView" class="calendar-view" style="display: none;">
-            <!-- 日历视图将动态生成 -->
-        </div>
-        
-        <div id="listView" class="list-view" style="display: none;">
-            <h3 class="section-title" style="font-size: 16px; margin-bottom: 10px;">记账记录</h3>
-            
-            <div class="summary">
-                <div class="summary-item">
-                    <div>总收入</div>
-                    <div class="summary-value income-summary">¥0.00</div>
-                </div>
-                <div class="summary-item">
-                    <div>总支出</div>
-                    <div class="summary-value expense-summary">¥0.00</div>
-                </div>
-            </div>
-            
-            <div id="recordsList" class="records-list">
-                <div class="empty-records">暂无记账记录</div>
-            </div>
-        </div>
-        
-        <div id="detailView" class="detail-view">
-            <button class="back-btn" onclick="backToMainView()">← 返回</button>
-            
-            <div class="detail-header">
-                <div class="detail-date" id="detailDate">2024年12月15日</div>
-                
-                <div class="detail-stats">
-                    <div class="stat-item">
-                        <div>总收入</div>
-                        <div class="stat-value income-stat" id="detailIncome">¥0.00</div>
-                    </div>
-                    <div class="stat-item">
-                        <div>总支出</div>
-                        <div class="stat-value expense-stat" id="detailExpense">¥0.00</div>
-                    </div>
-                    <div class="stat-item">
-                        <div>净收入</div>
-                        <div class="stat-value" id="detailNet">¥0.00</div>
-                    </div>
                 </div>
                 
-                <div class="view-toggle">
-                    <button class="toggle-btn active" onclick="switchDetailView('list')">列表查看</button>
-                    <button class="toggle-btn" onclick="switchDetailView('calendar')">方块查看</button>
+                <div class="input-group">
+                    <label>备注</label>
+                    <input type="text" id="editDescription" placeholder="请输入备注（可选）">
                 </div>
-            </div>
-            
-            <div id="detailListView" class="detail-list-view">
-                <div id="detailRecordsList" class="records-list">
-                    <!-- 详情记录列表 -->
+                
+                <div class="modal-buttons">
+                    <button class="btn add-btn" onclick="saveEditedRecord()">保存修改</button>
+                    <button class="btn edit-btn" onclick="closeEditModal()">取消</button>
                 </div>
-            </div>
-            
-            <div id="detailCalendarView" class="detail-calendar-view">
-                <div id="detailCalendarGrid" class="detail-calendar-grid">
-                    <!-- 详情方块视图 -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 编辑记录弹窗 -->
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeEditModal()">&times;</span>
-            <h2 style="margin-bottom: 15px;">编辑记录</h2>
-            <div class="input-group">
-                <label>记账类型</label>
-                <select id="editRecordType">
-                    <option value="expense">支出</option>
-                    <option value="income">收入</option>
-                </select>
-            </div>
-            
-            <div class="input-group">
-                <label>日期</label>
-                <input type="date" id="editRecordDate" value="">
-            </div>
-            
-            <div class="input-group">
-                <label>金额和分类</label>
-                <div class="amount-category-input">
-                    <input type="number" id="editAmount" placeholder="金额" step="0.01" class="amount-input">
-                    <select id="editCategory" class="category-input">
-                        <option value="餐饮">餐饮</option>
-                        <option value="购物">购物</option>
-                        <option value="交通">交通</option>
-                        <option value="娱乐">娱乐</option>
-                        <option value="医疗">医疗</option>
-                        <option value="工资">工资</option>
-                        <option value="奖金">奖金</option>
-                        <option value="其他">其他</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="input-group">
-                <label>备注</label>
-                <input type="text" id="editDescription" placeholder="请输入备注（可选）">
-            </div>
-            
-            <div class="modal-buttons">
-                <button class="btn add-btn" onclick="saveEditedRecord()">保存修改</button>
-                <button class="btn edit-btn" onclick="closeEditModal()">取消</button>
             </div>
         </div>
     </div>
@@ -1193,6 +1042,7 @@
         let selectedDate = null;
         let selectedYear = null;
         let editingRecordId = null;
+        let currentPage = 'input'; // 'input', 'browse', 'settings'
 
         // 初始化页面
         function init() {
@@ -1208,15 +1058,44 @@
             // 添加导入文件监听器
             document.getElementById('importFile').addEventListener('change', handleFileImport);
             
-            // 更新导航按钮文本
-            updateNavButtons();
-            
             // 设置导出选项事件监听器
             document.getElementById('exportType').addEventListener('change', updateExportOptions);
             
             // 设置默认导出日期
             const todayISO = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
             document.getElementById('exportDay').value = todayISO;
+        }
+
+        // 切换页面
+        function switchPage(page) {
+            // 更新底部导航状态
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.closest('.nav-item').classList.add('active');
+            
+            // 隐藏所有页面
+            document.getElementById('inputView').style.display = 'none';
+            document.getElementById('browseView').style.display = 'none';
+            document.getElementById('settingsView').style.display = 'none';
+            document.getElementById('detailView').style.display = 'none';
+            
+            // 显示当前页面
+            if (page === 'input') {
+                document.getElementById('inputView').style.display = 'block';
+            } else if (page === 'browse') {
+                document.getElementById('browseView').style.display = 'block';
+                // 如果当前视图是年视图或列表视图，更新年余额；如果是月视图，更新月余额
+                if (currentView === 'year' || currentView === 'list') {
+                    updateYearBalance();
+                } else if (currentView === 'calendar') {
+                    updateMonthBalance();
+                }
+            } else if (page === 'settings') {
+                document.getElementById('settingsView').style.display = 'block';
+            }
+            
+            currentPage = page;
         }
 
         // 切换视图
@@ -1254,27 +1133,6 @@
                 // 更新余额显示为年余额
                 updateYearBalance();
             }
-            
-            // 更新导航按钮文本
-            updateNavButtons();
-        }
-
-        // 更新导航按钮文本
-        function updateNavButtons() {
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            
-            if (currentView === 'calendar') {
-                prevBtn.textContent = '‹ 上月';
-                nextBtn.textContent = '下月 ›';
-                prevBtn.onclick = prevMonth;
-                nextBtn.onclick = nextMonth;
-            } else {
-                prevBtn.textContent = '‹ 上年';
-                nextBtn.textContent = '下年 ›';
-                prevBtn.onclick = prevYear;
-                nextBtn.onclick = nextYear;
-            }
         }
 
         // 切换详情视图
@@ -1299,9 +1157,9 @@
         // 进入详情视图
         function enterDetailView(dateStr) {
             selectedDate = dateStr;
-            document.getElementById('yearView').style.display = 'none';
-            document.getElementById('calendarView').style.display = 'none';
-            document.getElementById('listView').style.display = 'none';
+            document.getElementById('inputView').style.display = 'none';
+            document.getElementById('browseView').style.display = 'none';
+            document.getElementById('settingsView').style.display = 'none';
             document.getElementById('detailView').style.display = 'block';
             
             // 更新详情头部信息
@@ -1364,9 +1222,9 @@
                         ${record.type === 'income' ? '+' : '-'}¥${record.amount.toFixed(2)}
                     </div>
                     ${record.description ? `<div class="detail-description">${record.description}</div>` : ''}
-                    <div style="margin-top: 5px;">
-                        <button class="edit-btn-small" onclick="openEditModal(${record.id})" style="padding: 3px 6px; font-size: 10px; margin-right: 5px;">编辑</button>
-                        <button class="delete-btn" onclick="deleteRecord(${record.id})" style="padding: 3px 6px; font-size: 10px;">删除</button>
+                    <div style="margin-top: 8px;">
+                        <button class="edit-btn-small" onclick="openEditModal(${record.id})" style="padding: 4px 8px; font-size: 12px; margin-right: 6px;">编辑</button>
+                        <button class="delete-btn" onclick="deleteRecord(${record.id})" style="padding: 4px 8px; font-size: 12px;">删除</button>
                     </div>
                 </div>
             `).join('');
@@ -1374,12 +1232,12 @@
 
         // 返回主视图
         function backToMainView() {
-            if (currentView === 'year') {
-                document.getElementById('yearView').style.display = 'block';
-            } else if (currentView === 'calendar') {
-                document.getElementById('calendarView').style.display = 'block';
-            } else {
-                document.getElementById('listView').style.display = 'block';
+            if (currentPage === 'input') {
+                document.getElementById('inputView').style.display = 'block';
+            } else if (currentPage === 'browse') {
+                document.getElementById('browseView').style.display = 'block';
+            } else if (currentPage === 'settings') {
+                document.getElementById('settingsView').style.display = 'block';
             }
             document.getElementById('detailView').style.display = 'none';
         }
@@ -1422,10 +1280,10 @@
             updateDisplay();
             renderYearView();
             renderCalendar();
-            if (currentView === 'list') {
+            if (currentPage === 'browse' && currentView === 'list') {
                 updateListView();
             }
-            if (selectedDate && currentView === 'detail') {
+            if (selectedDate && currentPage === 'detail') {
                 enterDetailView(selectedDate);
             }
         }
@@ -1444,7 +1302,7 @@
                     updateDisplay();
                     renderYearView();
                     renderCalendar();
-                    if (currentView === 'list') {
+                    if (currentPage === 'browse' && currentView === 'list') {
                         updateListView();
                     }
                     if (selectedDate) {
@@ -1519,7 +1377,7 @@
                 updateDisplay();
                 renderYearView();
                 renderCalendar();
-                if (currentView === 'list') {
+                if (currentPage === 'browse' && currentView === 'list') {
                     updateListView();
                 }
                 if (selectedDate) {
@@ -1530,9 +1388,14 @@
 
         // 更新显示
         function updateDisplay() {
-            if (currentView === 'year' || currentView === 'list') {
-                updateYearBalance();
-            } else if (currentView === 'calendar') {
+            if (currentPage === 'browse') {
+                if (currentView === 'year' || currentView === 'list') {
+                    updateYearBalance();
+                } else if (currentView === 'calendar') {
+                    updateMonthBalance();
+                }
+            } else {
+                // 默认显示月余额
                 updateMonthBalance();
             }
         }
@@ -1550,9 +1413,6 @@
             // 更新余额显示
             document.querySelector('.balance-amount').textContent = `¥${yearBalance.toFixed(2)}`;
             document.getElementById('balanceLabel').textContent = `${year}年余额`;
-            
-            // 更新当前日期显示
-            document.getElementById('currentDate').textContent = `${year}年`;
         }
 
         // 更新月余额显示
@@ -1569,9 +1429,6 @@
             // 更新余额显示
             document.querySelector('.balance-amount').textContent = `¥${monthBalance.toFixed(2)}`;
             document.getElementById('balanceLabel').textContent = `${year}年${month}月余额`;
-            
-            // 更新当前日期显示
-            document.getElementById('currentDate').textContent = `${year}年${month}月`;
         }
 
         // 渲染年视图
@@ -1688,9 +1545,6 @@
             
             calendarHTML += '</div>';
             document.getElementById('calendarView').innerHTML = calendarHTML;
-            
-            // 更新当前月份显示
-            document.getElementById('currentDate').textContent = `${year}年${month + 1}月`;
         }
 
         // 选择日期（进入详情）
@@ -1721,53 +1575,6 @@
                     <button class="delete-btn" onclick="deleteRecord(${record.id})">×</button>
                 </div>
             `).join('');
-        }
-
-        // 切换年份
-        function prevYear() {
-            currentDate.setFullYear(currentDate.getFullYear() - 1);
-            updateDisplay();
-            renderYearView();
-            updateNavButtons();
-        }
-
-        function nextYear() {
-            currentDate.setFullYear(currentDate.getFullYear() + 1);
-            updateDisplay();
-            renderYearView();
-            updateNavButtons();
-        }
-
-        // 切换月份
-        function prevMonth() {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-            updateMonthBalance();
-            updateNavButtons();
-        }
-
-        function nextMonth() {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-            updateMonthBalance();
-            updateNavButtons();
-        }
-
-        // 统一的导航按钮处理函数
-        function prevPeriod() {
-            if (currentView === 'calendar') {
-                prevMonth();
-            } else {
-                prevYear();
-            }
-        }
-
-        function nextPeriod() {
-            if (currentView === 'calendar') {
-            nextMonth();
-            } else {
-                nextYear();
-            }
         }
 
         // 自定义分类管理
@@ -1828,30 +1635,10 @@
                     updateDisplay();
                     renderYearView();
                     renderCalendar();
-                    if (currentView === 'list') {
+                    if (currentPage === 'browse' && currentView === 'list') {
                         updateListView();
                     }
                 }
-            }
-        }
-
-        // 切换分类管理器显示
-        function toggleCategoryManager() {
-            const manager = document.getElementById('categoryManager');
-            if (manager.style.display === 'block') {
-                manager.style.display = 'none';
-            } else {
-                manager.style.display = 'block';
-            }
-        }
-
-        // 切换导出导入功能显示
-        function toggleExportImport() {
-            const section = document.getElementById('exportImportSection');
-            if (section.style.display === 'block') {
-                section.style.display = 'none';
-            } else {
-                section.style.display = 'block';
             }
         }
 
@@ -1989,7 +1776,7 @@
                                 updateDisplay();
                                 renderYearView();
                                 renderCalendar();
-                                if (currentView === 'list') {
+                                if (currentPage === 'browse' && currentView === 'list') {
                                     updateListView();
                                 }
                             } else {
@@ -2047,7 +1834,7 @@
                                 updateDisplay();
                                 renderYearView();
                                 renderCalendar();
-                                if (currentView === 'list') {
+                                if (currentPage === 'browse' && currentView === 'list') {
                                     updateListView();
                                 }
                             } else {
