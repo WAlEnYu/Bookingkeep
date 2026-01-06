@@ -442,6 +442,15 @@
             border-radius: 15px;
             font-size: 11px;
             cursor: pointer;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .category-tag .delete-tag {
+            margin-left: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ff6b6b;
         }
         
         .category-tag:hover {
@@ -520,6 +529,33 @@
             font-size: 12px;
             margin-bottom: 8px;
             width: 100%;
+        }
+        
+        .export-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .export-option {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .export-option label {
+            font-weight: 500;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .export-option select, .export-option input {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
         }
         
         /* 详情页面样式 */
@@ -993,6 +1029,43 @@
                 <button class="export-btn" onclick="exportRecords('excel')">导出Excel</button>
                 <button class="import-btn" onclick="document.getElementById('importFile').click()">导入记录</button>
                 <input type="file" id="importFile" class="import-file-input" accept=".json,.xlsx,.csv">
+                
+                <div class="export-options">
+                    <div class="export-option">
+                        <label>导出类型</label>
+                        <select id="exportType">
+                            <option value="all">全部记录</option>
+                            <option value="year">某一年</option>
+                            <option value="month">某个月</option>
+                            <option value="day">某一天</option>
+                        </select>
+                    </div>
+                    <div class="export-option" id="yearOption" style="display:none;">
+                        <label>选择年份</label>
+                        <input type="number" id="exportYear" min="2000" max="2100" value="2024">
+                    </div>
+                    <div class="export-option" id="monthOption" style="display:none;">
+                        <label>选择月份</label>
+                        <select id="exportMonth">
+                            <option value="1">1月</option>
+                            <option value="2">2月</option>
+                            <option value="3">3月</option>
+                            <option value="4">4月</option>
+                            <option value="5">5月</option>
+                            <option value="6">6月</option>
+                            <option value="7">7月</option>
+                            <option value="8">8月</option>
+                            <option value="9">9月</option>
+                            <option value="10">10月</option>
+                            <option value="11">11月</option>
+                            <option value="12">12月</option>
+                        </select>
+                    </div>
+                    <div class="export-option" id="dayOption" style="display:none;">
+                        <label>选择日期</label>
+                        <input type="date" id="exportDay" value="">
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -1137,6 +1210,13 @@
             
             // 更新导航按钮文本
             updateNavButtons();
+            
+            // 设置导出选项事件监听器
+            document.getElementById('exportType').addEventListener('change', updateExportOptions);
+            
+            // 设置默认导出日期
+            const todayISO = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+            document.getElementById('exportDay').value = todayISO;
         }
 
         // 切换视图
@@ -1698,9 +1778,11 @@
             customCategories.forEach(category => {
                 const tag = document.createElement('span');
                 tag.className = 'category-tag';
-                tag.textContent = category;
-                tag.onclick = () => {
-                    document.getElementById('category').value = category;
+                tag.innerHTML = `${category} <span class="delete-tag" onclick="deleteCustomCategory('${category}')">×</span>`;
+                tag.onclick = (e) => {
+                    if (e.target.className !== 'delete-tag') {
+                        document.getElementById('category').value = category;
+                    }
                 };
                 categoryList.appendChild(tag);
             });
@@ -1726,6 +1808,33 @@
             }
         }
 
+        function deleteCustomCategory(category) {
+            if (confirm(`确定要删除分类 "${category}" 吗？\n注意：已使用此分类的记录不会被删除，但分类将被移除。`)) {
+                const index = customCategories.indexOf(category);
+                if (index > -1) {
+                    customCategories.splice(index, 1);
+                    localStorage.setItem('customCategories', JSON.stringify(customCategories));
+                    
+                    // 更新记录中的分类（将已删除的分类改为"其他"）
+                    records = records.map(record => {
+                        if (record.category === category) {
+                            return {...record, category: '其他'};
+                        }
+                        return record;
+                    });
+                    localStorage.setItem('accountingRecords', JSON.stringify(records));
+                    
+                    updateCategoryList();
+                    updateDisplay();
+                    renderYearView();
+                    renderCalendar();
+                    if (currentView === 'list') {
+                        updateListView();
+                    }
+                }
+            }
+        }
+
         // 切换分类管理器显示
         function toggleCategoryManager() {
             const manager = document.getElementById('categoryManager');
@@ -1743,6 +1852,26 @@
                 section.style.display = 'none';
             } else {
                 section.style.display = 'block';
+            }
+        }
+
+        // 更新导出选项显示
+        function updateExportOptions() {
+            const exportType = document.getElementById('exportType').value;
+            
+            // 隐藏所有选项
+            document.getElementById('yearOption').style.display = 'none';
+            document.getElementById('monthOption').style.display = 'none';
+            document.getElementById('dayOption').style.display = 'none';
+            
+            // 根据选择显示对应选项
+            if (exportType === 'year') {
+                document.getElementById('yearOption').style.display = 'block';
+            } else if (exportType === 'month') {
+                document.getElementById('yearOption').style.display = 'block';
+                document.getElementById('monthOption').style.display = 'block';
+            } else if (exportType === 'day') {
+                document.getElementById('dayOption').style.display = 'block';
             }
         }
 
@@ -1769,17 +1898,35 @@
 
         // 导出记录
         function exportRecords(format) {
-            if (records.length === 0) {
-                alert('没有记录可以导出');
+            // 获取导出类型
+            const exportType = document.getElementById('exportType').value;
+            let filteredRecords = records;
+            
+            // 根据导出类型过滤记录
+            if (exportType === 'year') {
+                const year = document.getElementById('exportYear').value;
+                filteredRecords = records.filter(r => r.date.startsWith(year));
+            } else if (exportType === 'month') {
+                const year = document.getElementById('exportYear').value;
+                const month = document.getElementById('exportMonth').value;
+                filteredRecords = records.filter(r => r.date.startsWith(`${year}/${month}`));
+            } else if (exportType === 'day') {
+                const day = document.getElementById('exportDay').value;
+                const dayStr = formatDateToChinese(day);
+                filteredRecords = records.filter(r => r.date === dayStr);
+            }
+            
+            if (filteredRecords.length === 0) {
+                alert('没有符合条件的记录可以导出');
                 return;
             }
 
             if (format === 'json') {
                 // 导出JSON格式
-                const dataStr = JSON.stringify(records, null, 2);
+                const dataStr = JSON.stringify(filteredRecords, null, 2);
                 const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
                 
-                const exportFileDefaultName = 'accounting_records.json';
+                const exportFileDefaultName = `accounting_records_${exportType}_${Date.now()}.json`;
                 
                 const linkElement = document.createElement('a');
                 linkElement.setAttribute('href', dataUri);
@@ -1789,13 +1936,13 @@
                 // 导出CSV格式（Excel兼容）
                 let csvContent = 'ID,金额,类型,分类,描述,日期,时间戳\n';
                 
-                records.forEach(record => {
+                filteredRecords.forEach(record => {
                     csvContent += `"${record.id}","${record.amount}","${record.type}","${record.category}","${record.description || ''}","${record.date}","${record.timestamp}"\n`;
                 });
                 
                 const dataUri = 'data:text/csv;charset=utf-8,'+ encodeURIComponent(csvContent);
                 
-                const exportFileDefaultName = 'accounting_records.csv';
+                const exportFileDefaultName = `accounting_records_${exportType}_${Date.now()}.csv`;
                 
                 const linkElement = document.createElement('a');
                 linkElement.setAttribute('href', dataUri);
