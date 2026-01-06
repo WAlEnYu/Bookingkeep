@@ -14,64 +14,66 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #d0c6d9, #b8c1ec);
             min-height: 100vh;
-            padding-bottom: 70px; /* 为底部导航留出空间 */
-            padding-top: 0; /* 移除顶部内边距 */
+            padding-bottom: 56px; /* 为底部导航留出空间，原70px的3/5 */
+            padding-top: 0;
         }
         
         .container {
             max-width: 100%;
             margin: 0 auto;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
             overflow: hidden;
             min-height: 100vh;
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 10px 10px; /* 增加顶部和底部的内边距 */
+            background: linear-gradient(135deg, #a7c5eb, #b8d4e8);
+            color: #4a5568;
+            padding: 12px 15px; /* 减少内边距 */
             text-align: center;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            height: 120px; /* 固定头部高度 */
+            height: 90px; /* 原120px的3/4 */
         }
         
         .header h1 {
-            font-size: 18px;
-            margin-bottom: 10px; /* 增加标题与余额之间的间距 */
+            font-size: 16px;
+            margin-bottom: 6px; /* 减少间距 */
+            color: #4a5568;
         }
         
         .balance-display {
-            background: rgba(255,255,255,0.2);
-            padding: 8px;
-            border-radius: 10px;
-            margin-top: 5px;
-            width: 75%;
-            margin: 5px auto 0 auto; /* 调整上边距 */
+            background: rgba(255,255,255,0.3);
+            padding: 6px;
+            border-radius: 8px;
+            margin-top: 3px;
+            width: 70%;
+            margin: 3px auto 0 auto;
         }
         
         .balance-amount {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
+            color: #4a5568;
         }
         
         .content {
-            padding-top: 130px; /* 增加顶部内边距以适应固定头部 */
-            padding-bottom: 70px; /* 为底部导航留出空间 */
+            padding-top: 95px; /* 增加顶部内边距以适应固定头部 */
+            padding-bottom: 60px; /* 为底部导航留出空间 */
             overflow-y: auto;
-            height: calc(100vh - 130px); /* 调整高度计算 */
+            height: calc(100vh - 95px); /* 调整高度计算 */
         }
         
         .page {
             display: none;
-            padding: 15px;
+            padding: 12px;
         }
         
         .page.active {
@@ -79,38 +81,40 @@
         }
         
         .input-section {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .input-group {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .input-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             font-weight: 500;
-            color: #333;
-            font-size: 14px;
+            color: #5a6268;
+            font-size: 13px;
         }
         
         .input-group input, .input-group select {
             width: 100%;
-            padding: 10px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 14px;
+            padding: 8px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 13px;
             transition: border-color 0.3s;
+            background-color: #f8fafc;
+            color: #4a5568;
         }
         
         .input-group input:focus, .input-group select:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #a7c5eb;
         }
         
         .type-date-input {
             display: flex;
-            gap: 5px;
+            gap: 4px;
         }
         
         .type-input {
@@ -123,7 +127,7 @@
         
         .amount-category-input {
             display: flex;
-            gap: 5px;
+            gap: 4px;
         }
         
         .amount-input {
@@ -136,7 +140,7 @@
         
         .desc-add-input {
             display: flex;
-            gap: 5px;
+            gap: 4px;
             align-items: flex-end;
         }
         
@@ -150,51 +154,51 @@
         
         .btn {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         
         .add-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #a7c5eb, #b8d4e8);
             color: white;
         }
         
         .edit-btn {
-            background: #ffc107;
+            background: #d4c1ec;
             color: white;
         }
         
         .btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
         }
         
         .view-toggle {
             display: flex;
-            gap: 5px;
-            margin-bottom: 10px;
+            gap: 4px;
+            margin-bottom: 8px;
         }
         
         .toggle-btn {
             flex: 1;
-            padding: 8px;
-            border: 2px solid #667eea;
+            padding: 6px;
+            border: 2px solid #a7c5eb;
             background: white;
-            color: #667eea;
-            border-radius: 8px;
+            color: #a7c5eb;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 11px;
         }
         
         .toggle-btn.active {
-            background: #667eea;
+            background: #a7c5eb;
             color: white;
         }
         
@@ -202,44 +206,44 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .date-display {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
-            color: #333;
+            color: #5a6268;
         }
         
         .nav-btn {
-            background: #667eea;
+            background: #a7c5eb;
             color: white;
             border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 5px 10px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 11px;
         }
         
         .year-view {
-            padding: 15px;
+            padding: 12px;
         }
         
         .year-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 6px;
+            margin-bottom: 12px;
         }
         
         .month-box {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            padding: 10px;
+            background: #e2e8f0;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 8px;
             cursor: pointer;
             transition: all 0.3s;
-            min-height: 70px;
+            min-height: 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -248,97 +252,99 @@
         }
         
         .month-box:hover {
-            background: #e9ecef;
-            border-color: #667eea;
+            background: #cbd5e1;
+            border-color: #a7c5eb;
         }
         
         .month-box.active {
-            background: #667eea;
-            border-color: #667eea;
+            background: #a7c5eb;
+            border-color: #a7c5eb;
             color: white;
         }
         
         .month-name {
             font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 3px;
+            font-size: 13px;
+            margin-bottom: 2px;
+            color: #4a5568;
         }
         
         .month-amount {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 600;
         }
         
         .month-income {
-            color: #28a745;
+            color: #68d391;
         }
         
         .month-expense {
-            color: #dc3545;
+            color: #fc8181;
         }
         
         .calendar-view {
-            padding: 15px;
+            padding: 12px;
         }
         
         .month-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
-            margin-bottom: 15px;
+            gap: 3px;
+            margin-bottom: 12px;
         }
         
         .week-header {
             text-align: center;
             font-weight: 600;
-            color: #666;
-            padding: 6px 0;
-            font-size: 10px;
+            color: #718096;
+            padding: 5px 0;
+            font-size: 9px;
         }
         
         .day-box {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            padding: 6px;
+            background: #e2e8f0;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 5px;
             cursor: pointer;
             transition: all 0.3s;
-            min-height: 50px;
+            min-height: 45px;
             position: relative;
         }
         
         .day-box:hover {
-            background: #e9ecef;
-            border-color: #667eea;
+            background: #cbd5e1;
+            border-color: #a7c5eb;
         }
         
         .day-box.active {
-            background: #667eea;
-            border-color: #667eea;
+            background: #a7c5eb;
+            border-color: #a7c5eb;
             color: white;
         }
         
         .day-number {
             font-weight: 600;
-            font-size: 12px;
-            margin-bottom: 3px;
+            font-size: 11px;
+            margin-bottom: 2px;
+            color: #4a5568;
         }
         
         .day-amount {
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 600;
         }
         
         .day-income {
-            color: #28a745;
+            color: #68d391;
         }
         
         .day-expense {
-            color: #dc3545;
+            color: #fc8181;
         }
         
         .list-view {
-            padding: 15px;
+            padding: 12px;
         }
         
         .records-list {
@@ -350,11 +356,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px;
-            margin-bottom: 8px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            padding: 10px;
+            margin-bottom: 6px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            border-left: 4px solid #a7c5eb;
         }
         
         .record-info {
@@ -363,59 +369,60 @@
         
         .record-type {
             font-weight: 600;
-            margin-bottom: 3px;
-            font-size: 14px;
+            margin-bottom: 2px;
+            font-size: 13px;
+            color: #4a5568;
         }
         
         .record-category {
-            font-size: 11px;
-            color: #666;
+            font-size: 10px;
+            color: #718096;
             margin-bottom: 2px;
         }
         
         .record-amount {
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15px;
         }
         
         .income {
-            border-left-color: #28a745;
+            border-left-color: #68d391;
         }
         
         .expense {
-            border-left-color: #dc3545;
+            border-left-color: #fc8181;
         }
         
         .delete-btn, .edit-btn-small {
-            background: #dc3545;
+            background: #fc8181;
             color: white;
             border: none;
-            padding: 6px 10px;
-            border-radius: 5px;
+            padding: 5px 8px;
+            border-radius: 4px;
             cursor: pointer;
-            margin-left: 8px;
-            font-size: 12px;
+            margin-left: 6px;
+            font-size: 11px;
         }
         
         .edit-btn-small {
-            background: #ffc107;
+            background: #d4c1ec;
         }
         
         .empty-records {
             text-align: center;
-            color: #666;
-            padding: 30px 15px;
+            color: #718096;
+            padding: 24px 12px;
             font-style: italic;
-            font-size: 14px;
+            font-size: 13px;
         }
         
         .summary {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 15px;
-            padding: 12px;
-            background: #f8f9fa;
-            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #e2e8f0;
+            border-radius: 6px;
         }
         
         .summary-item {
@@ -423,23 +430,23 @@
         }
         
         .summary-value {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
         }
         
         .income-summary {
-            color: #28a745;
+            color: #68d391;
         }
         
         .expense-summary {
-            color: #dc3545;
+            color: #fc8181;
         }
         
         .category-manager, .export-import-section {
-            margin-top: 12px;
-            padding: 12px;
-            background: #e8f5e8;
-            border-radius: 8px;
+            margin-top: 10px;
+            padding: 10px;
+            background: #e8f4f8;
+            border-radius: 6px;
         }
         
         .section-header {
@@ -447,38 +454,40 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         
         .section-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
+            color: #4a5568;
         }
         
         .section-toggle {
-            font-size: 12px;
+            font-size: 11px;
+            color: #718096;
         }
         
         .category-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin: 8px 0;
+            gap: 5px;
+            margin: 6px 0;
         }
         
         .category-tag {
-            background: #28a745;
+            background: #68d391;
             color: white;
-            padding: 4px 8px;
-            border-radius: 15px;
-            font-size: 11px;
+            padding: 3px 7px;
+            border-radius: 12px;
+            font-size: 10px;
             cursor: pointer;
             position: relative;
             display: inline-block;
         }
         
         .category-tag .delete-tag {
-            margin-left: 5px;
+            margin-left: 4px;
             cursor: pointer;
             font-weight: bold;
             color: #ff6b6b;
@@ -490,44 +499,48 @@
         
         .add-category-input {
             display: flex;
-            gap: 8px;
-            margin-top: 8px;
+            gap: 6px;
+            margin-top: 6px;
         }
         
         .add-category-input input {
             flex: 1;
+            padding: 6px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            font-size: 12px;
         }
         
         .add-category-btn {
-            background: #28a745;
+            background: #68d391;
             color: white;
             border: none;
-            padding: 6px 10px;
-            border-radius: 5px;
+            padding: 5px 8px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 11px;
         }
         
         .export-import-section {
-            background: #e8f5f5;
+            background: #f0f7ff;
         }
         
         .export-btn, .import-btn {
-            padding: 8px;
-            border: 2px solid #667eea;
+            padding: 6px;
+            border: 2px solid #a7c5eb;
             background: white;
-            color: #667eea;
-            border-radius: 8px;
+            color: #a7c5eb;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 12px;
-            margin: 5px 2px;
+            font-size: 11px;
+            margin: 4px 1px;
             display: inline-block;
-            min-width: 100px;
+            min-width: 90px;
         }
         
         .export-btn:hover, .import-btn:hover {
-            background: #667eea;
+            background: #a7c5eb;
             color: white;
         }
         
@@ -538,28 +551,29 @@
         .export-options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 8px;
+            margin-top: 8px;
         }
         
         .export-option {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
         }
         
         .export-option label {
             font-weight: 500;
-            color: #333;
-            font-size: 14px;
+            color: #5a6268;
+            font-size: 13px;
         }
         
         .export-option select, .export-option input {
             width: 100%;
-            padding: 8px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 14px;
+            padding: 6px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 13px;
+            background-color: #f8fafc;
         }
         
         .nav-bar {
@@ -568,9 +582,9 @@
             left: 0;
             right: 0;
             background: white;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #e2e8f0;
             display: flex;
-            padding: 10px 0;
+            padding: 8px 0; /* 减少底部导航高度 */
             z-index: 1000;
         }
         
@@ -578,22 +592,22 @@
             flex: 1;
             text-align: center;
             cursor: pointer;
-            padding: 5px;
+            padding: 4px;
         }
         
         .nav-icon {
-            font-size: 20px;
+            font-size: 18px; /* 减小图标大小 */
             display: block;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
         
         .nav-text {
-            font-size: 12px;
-            color: #666;
+            font-size: 11px;
+            color: #718096;
         }
         
         .nav-item.active .nav-text {
-            color: #667eea;
+            color: #a7c5eb;
             font-weight: bold;
         }
         
@@ -611,17 +625,17 @@
         .modal-content {
             background-color: white;
             margin: 5% auto;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 16px;
+            border-radius: 8px;
             width: 90%;
-            max-width: 400px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            max-width: 380px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         
         .close {
             color: #aaa;
             float: right;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             cursor: pointer;
         }
@@ -632,8 +646,8 @@
         
         .modal-buttons {
             display: flex;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 6px;
+            margin-top: 12px;
         }
         
         /* 手机端特殊优化 */
@@ -650,16 +664,16 @@
             }
             
             .header {
-                height: 110px; /* 调整手机端头部高度 */
+                height: 85px; /* 调整手机端头部高度 */
             }
             
             .content {
-                padding-top: 120px; /* 调整手机端内容顶部内边距 */
-                height: calc(100vh - 120px);
+                padding-top: 90px; /* 调整手机端内容顶部内边距 */
+                height: calc(100vh - 90px);
             }
             
             .nav-section {
-                padding: 10px;
+                padding: 8px;
             }
             
             .view-toggle {
@@ -670,8 +684,8 @@
             .toggle-btn {
                 flex: 1;
                 min-width: 30%;
-                padding: 6px;
-                font-size: 11px;
+                padding: 5px;
+                font-size: 10px;
             }
             
             .date-nav {
@@ -679,34 +693,34 @@
             }
             
             .date-display {
-                font-size: 14px;
+                font-size: 13px;
             }
             
             .nav-btn {
-                padding: 5px 10px;
-                font-size: 11px;
+                padding: 4px 8px;
+                font-size: 10px;
             }
             
             .input-section {
-                padding: 12px;
+                padding: 10px;
             }
             
             .input-group {
-                margin-bottom: 8px;
+                margin-bottom: 6px;
             }
             
             .input-group label {
-                font-size: 13px;
+                font-size: 12px;
             }
             
             .input-group input, .input-group select {
-                padding: 8px;
-                font-size: 13px;
+                padding: 6px;
+                font-size: 12px;
             }
             
             .type-date-input {
                 flex-direction: row;
-                gap: 8px;
+                gap: 6px;
             }
             
             .type-input {
@@ -719,7 +733,7 @@
             
             .amount-category-input {
                 flex-direction: row;
-                gap: 8px;
+                gap: 6px;
             }
             
             .amount-input {
@@ -732,7 +746,7 @@
             
             .desc-add-input {
                 flex-direction: row;
-                gap: 8px;
+                gap: 6px;
                 align-items: flex-end;
             }
             
@@ -749,41 +763,41 @@
             }
             
             .month-box {
-                min-height: 60px;
-                padding: 8px;
+                min-height: 55px;
+                padding: 6px;
             }
             
             .month-name {
-                font-size: 12px;
+                font-size: 11px;
             }
             
             .month-amount {
-                font-size: 9px;
-            }
-            
-            .calendar-view {
-                padding: 10px;
-            }
-            
-            .month-grid {
-                gap: 3px;
-            }
-            
-            .day-box {
-                min-height: 40px;
-                padding: 4px;
-            }
-            
-            .day-number {
-                font-size: 10px;
-            }
-            
-            .day-amount {
                 font-size: 8px;
             }
             
+            .calendar-view {
+                padding: 8px;
+            }
+            
+            .month-grid {
+                gap: 2px;
+            }
+            
+            .day-box {
+                min-height: 38px;
+                padding: 3px;
+            }
+            
+            .day-number {
+                font-size: 9px;
+            }
+            
+            .day-amount {
+                font-size: 7px;
+            }
+            
             .list-view {
-                padding: 10px;
+                padding: 8px;
             }
             
             .records-list {
@@ -792,58 +806,58 @@
             }
             
             .record-item {
-                padding: 10px;
-                margin-bottom: 6px;
+                padding: 8px;
+                margin-bottom: 5px;
             }
             
             .record-type {
-                font-size: 13px;
+                font-size: 12px;
             }
             
             .record-category {
-                font-size: 10px;
+                font-size: 9px;
             }
             
             .record-amount {
-                font-size: 15px;
+                font-size: 14px;
             }
             
             .delete-btn, .edit-btn-small {
-                padding: 5px 8px;
-                font-size: 11px;
+                padding: 4px 6px;
+                font-size: 10px;
             }
             
             .summary {
-                margin-bottom: 12px;
-                padding: 10px;
+                margin-bottom: 10px;
+                padding: 8px;
             }
             
             .summary-value {
-                font-size: 16px;
+                font-size: 15px;
             }
             
             .category-manager, .export-import-section {
-                padding: 10px;
+                padding: 8px;
             }
             
             .category-tag {
-                font-size: 10px;
-                padding: 3px 6px;
+                font-size: 9px;
+                padding: 2px 5px;
             }
             
             .add-category-input {
                 flex-direction: row;
-                gap: 5px;
+                gap: 4px;
             }
             
             .add-category-btn {
-                padding: 5px 8px;
-                font-size: 11px;
+                padding: 4px 6px;
+                font-size: 10px;
             }
             
             .export-import-section {
                 flex-direction: column;
-                gap: 5px;
+                gap: 4px;
             }
             
             .export-btn, .import-btn {
@@ -851,23 +865,23 @@
             }
             
             .detail-view {
-                padding: 10px;
+                padding: 8px;
             }
             
             .detail-date {
-                font-size: 18px;
+                font-size: 16px;
             }
             
             .detail-stats {
-                gap: 10px;
+                gap: 8px;
             }
             
             .stat-item {
-                padding: 10px;
+                padding: 8px;
             }
             
             .stat-value {
-                font-size: 18px;
+                font-size: 16px;
             }
             
             .detail-calendar-grid {
@@ -876,7 +890,7 @@
             
             .modal-content {
                 margin: 10% auto;
-                padding: 15px;
+                padding: 12px;
                 width: 95%;
             }
             
@@ -963,7 +977,7 @@
                 </div>
                 
                 <div id="listView" class="list-view" style="display: none;">
-                    <h3 class="section-title" style="font-size: 16px; margin-bottom: 10px;">记账记录</h3>
+                    <h3 class="section-title" style="font-size: 15px; margin-bottom: 8px;">记账记录</h3>
                     
                     <div class="summary">
                         <div class="summary-item">
@@ -1071,7 +1085,7 @@
     <div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeEditModal()">&times;</span>
-            <h2 style="margin-bottom: 15px;">编辑记录</h2>
+            <h2 style="margin-bottom: 12px;">编辑记录</h2>
             <div class="input-group">
                 <label>记账类型</label>
                 <select id="editRecordType">
@@ -1931,5 +1945,6 @@
     </script>
 </body>
 </html>
+
 
 
