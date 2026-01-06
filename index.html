@@ -44,13 +44,15 @@
         
         .balance-display {
             background: rgba(255,255,255,0.2);
-            padding: 10px;
+            padding: 5px; /* 缩小垂直边距 */
             border-radius: 10px;
             margin-top: 10px;
+            width: 75%; /* 缩小宽度 */
+            margin: 10px auto; /* 居中 */
         }
         
         .balance-amount {
-            font-size: 22px;
+            font-size: 18px; /* 缩小字体 */
             font-weight: bold;
         }
         
@@ -137,6 +139,19 @@
             border-color: #667eea;
         }
         
+        .type-date-input {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .type-input {
+            flex: 1;
+        }
+        
+        .date-input {
+            flex: 1;
+        }
+        
         .amount-category-input {
             display: flex;
             gap: 5px;
@@ -150,8 +165,18 @@
             flex: 1;
         }
         
-        .date-input {
+        .desc-add-input {
+            display: flex;
+            gap: 5px;
+            align-items: flex-end;
+        }
+        
+        .desc-input {
             flex: 1;
+        }
+        
+        .add-btn-container {
+            flex: 0 0 auto; /* 固定宽度 */
         }
         
         .btn {
@@ -400,6 +425,7 @@
             padding: 12px;
             background: #e8f5e8;
             border-radius: 8px;
+            display: none; /* 默认隐藏 */
         }
         
         .category-list {
@@ -440,6 +466,60 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 12px;
+        }
+        
+        .category-toggle-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-bottom: 8px;
+            width: 100%;
+        }
+        
+        .export-import-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 12px;
+            display: none; /* 默认隐藏 */
+        }
+        
+        .export-btn, .import-btn {
+            flex: 1;
+            padding: 8px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            min-width: 100px;
+        }
+        
+        .export-btn:hover, .import-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .import-file-input {
+            display: none;
+        }
+        
+        .export-toggle-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-bottom: 8px;
+            width: 100%;
         }
         
         /* 详情页面样式 */
@@ -490,11 +570,11 @@
             background: #6c757d;
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 5px 10px; /* 缩小按钮 */
             border-radius: 6px;
             cursor: pointer;
             margin-bottom: 12px;
-            font-size: 14px;
+            font-size: 12px; /* 缩小字体 */
         }
         
         /* 详情列表视图 */
@@ -591,36 +671,6 @@
             margin-top: 15px;
         }
         
-        /* 导入导出按钮样式 */
-        .export-import-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-top: 12px;
-        }
-        
-        .export-btn, .import-btn {
-            flex: 1;
-            padding: 8px;
-            border: 2px solid #667eea;
-            background: white;
-            color: #667eea;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 12px;
-            min-width: 100px;
-        }
-        
-        .export-btn:hover, .import-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-        
-        .import-file-input {
-            display: none;
-        }
-        
         /* 手机端特殊优化 */
         @media (max-width: 768px) {
             body {
@@ -680,7 +730,17 @@
                 font-size: 13px;
             }
             
+            .type-date-input {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
             .amount-category-input {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .desc-add-input {
                 flex-direction: column;
                 gap: 8px;
             }
@@ -830,7 +890,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📅 方块日历记账本</h1>
+            <h1>💰 记账本</h1>
             <div class="balance-display">
                 <div id="balanceLabel">当前余额</div>
                 <div class="balance-amount">¥0.00</div>
@@ -853,16 +913,14 @@
         
         <div class="input-section">
             <div class="input-group">
-                <label>记账类型</label>
-                <select id="recordType">
-                    <option value="expense">支出</option>
-                    <option value="income">收入</option>
-                </select>
-            </div>
-            
-            <div class="input-group">
-                <label>日期</label>
-                <input type="date" id="recordDate" value="">
+                <label>记账类型和日期</label>
+                <div class="type-date-input">
+                    <select id="recordType" class="type-input">
+                        <option value="expense">支出</option>
+                        <option value="income">收入</option>
+                    </select>
+                    <input type="date" id="recordDate" value="" class="date-input">
+                </div>
             </div>
             
             <div class="input-group">
@@ -883,13 +941,17 @@
             </div>
             
             <div class="input-group">
-                <label>备注</label>
-                <input type="text" id="description" placeholder="请输入备注（可选）">
+                <label>备注和添加</label>
+                <div class="desc-add-input">
+                    <input type="text" id="description" placeholder="请输入备注（可选）" class="desc-input">
+                    <div class="add-btn-container">
+                        <button class="btn add-btn" onclick="addRecord()">添加记录</button>
+                    </div>
+                </div>
             </div>
             
-            <button class="btn add-btn" onclick="addRecord()">添加记录</button>
-            
-            <div class="category-manager">
+            <button class="category-toggle-btn" onclick="toggleCategoryManager()">🏷️ 自定义分类标签</button>
+            <div class="category-manager" id="categoryManager">
                 <h4 style="font-size: 14px;">🏷️ 自定义分类标签</h4>
                 <div class="category-list" id="categoryList">
                     <!-- 分类标签将动态生成 -->
@@ -898,13 +960,14 @@
                     <input type="text" id="newCategory" placeholder="添加新分类">
                     <button class="add-category-btn" onclick="addCustomCategory()">添加</button>
                 </div>
-                
-                <div class="export-import-section">
-                    <button class="export-btn" onclick="exportRecords('json')">导出JSON</button>
-                    <button class="export-btn" onclick="exportRecords('excel')">导出Excel</button>
-                    <button class="import-btn" onclick="document.getElementById('importFile').click()">导入记录</button>
-                    <input type="file" id="importFile" class="import-file-input" accept=".json,.xlsx,.csv">
-                </div>
+            </div>
+            
+            <button class="export-toggle-btn" onclick="toggleExportImport()">📤 导出导入功能</button>
+            <div class="export-import-section" id="exportImportSection">
+                <button class="export-btn" onclick="exportRecords('json')">导出JSON</button>
+                <button class="export-btn" onclick="exportRecords('excel')">导出Excel</button>
+                <button class="import-btn" onclick="document.getElementById('importFile').click()">导入记录</button>
+                <input type="file" id="importFile" class="import-file-input" accept=".json,.xlsx,.csv">
             </div>
         </div>
         
@@ -1635,6 +1698,26 @@
                 localStorage.setItem('customCategories', JSON.stringify(customCategories));
                 document.getElementById('newCategory').value = '';
                 updateCategoryList();
+            }
+        }
+
+        // 切换分类管理器显示
+        function toggleCategoryManager() {
+            const manager = document.getElementById('categoryManager');
+            if (manager.style.display === 'block') {
+                manager.style.display = 'none';
+            } else {
+                manager.style.display = 'block';
+            }
+        }
+
+        // 切换导出导入功能显示
+        function toggleExportImport() {
+            const section = document.getElementById('exportImportSection');
+            if (section.style.display === 'block') {
+                section.style.display = 'none';
+            } else {
+                section.style.display = 'block';
             }
         }
 
