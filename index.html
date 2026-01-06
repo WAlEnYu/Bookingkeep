@@ -27,6 +27,7 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             overflow: hidden;
+            min-height: 100vh;
         }
         
         .header {
@@ -628,9 +629,9 @@
             
             .container {
                 border-radius: 0;
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+                display: block;
             }
             
             .nav-section {
@@ -724,7 +725,10 @@
             
             .list-view {
                 padding: 10px;
-                flex: 1;
+            }
+            
+            .records-list {
+                max-height: 300px;
                 overflow-y: auto;
             }
             
@@ -789,8 +793,6 @@
             
             .detail-view {
                 padding: 10px;
-                flex: 1;
-                overflow-y: auto;
             }
             
             .detail-date {
@@ -1828,3 +1830,6 @@
     </script>
 </body>
 </html>
+
+
+
