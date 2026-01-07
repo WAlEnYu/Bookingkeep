@@ -14,9 +14,9 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #d0c6d9, #b8c1ec);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             min-height: 100vh;
-            padding-bottom: 56px; /* 为底部导航留出空间，原70px的3/5 */
+            padding-bottom: 70px;
             padding-top: 0;
         }
         
@@ -24,56 +24,54 @@
             max-width: 100%;
             margin: 0 auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             overflow: hidden;
             min-height: 100vh;
         }
         
         .header {
-            background: linear-gradient(135deg, #a7c5eb, #b8d4e8);
-            color: #4a5568;
-            padding: 12px 15px; /* 减少内边距 */
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 15px;
             text-align: center;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            height: 90px; /* 原120px的3/4 */
+            height: 120px;
         }
         
         .header h1 {
-            font-size: 16px;
-            margin-bottom: 6px; /* 减少间距 */
-            color: #4a5568;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
         
         .balance-display {
-            background: rgba(255,255,255,0.3);
-            padding: 6px;
-            border-radius: 8px;
-            margin-top: 3px;
-            width: 70%;
-            margin: 3px auto 0 auto;
+            background: rgba(255,255,255,0.2);
+            padding: 8px;
+            border-radius: 10px;
+            margin-top: 5px;
+            width: 75%;
+            margin: 5px auto 0 auto;
         }
         
         .balance-amount {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            color: #4a5568;
         }
         
         .content {
-            padding-top: 95px; /* 增加顶部内边距以适应固定头部 */
-            padding-bottom: 60px; /* 为底部导航留出空间 */
+            padding-top: 130px;
+            padding-bottom: 70px;
             overflow-y: auto;
-            height: calc(100vh - 95px); /* 调整高度计算 */
+            height: calc(100vh - 130px);
         }
         
         .page {
             display: none;
-            padding: 12px;
+            padding: 15px;
         }
         
         .page.active {
@@ -81,40 +79,38 @@
         }
         
         .input-section {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         
         .input-group {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .input-group label {
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             font-weight: 500;
-            color: #5a6268;
-            font-size: 13px;
+            color: #333;
+            font-size: 14px;
         }
         
         .input-group input, .input-group select {
             width: 100%;
-            padding: 8px;
-            border: 2px solid #d1d5db;
-            border-radius: 6px;
-            font-size: 13px;
+            padding: 10px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
             transition: border-color 0.3s;
-            background-color: #f8fafc;
-            color: #4a5568;
         }
         
         .input-group input:focus, .input-group select:focus {
             outline: none;
-            border-color: #a7c5eb;
+            border-color: #667eea;
         }
         
         .type-date-input {
             display: flex;
-            gap: 4px;
+            gap: 5px;
         }
         
         .type-input {
@@ -127,7 +123,7 @@
         
         .amount-category-input {
             display: flex;
-            gap: 4px;
+            gap: 5px;
         }
         
         .amount-input {
@@ -140,7 +136,7 @@
         
         .desc-add-input {
             display: flex;
-            gap: 4px;
+            gap: 5px;
             align-items: flex-end;
         }
         
@@ -154,51 +150,51 @@
         
         .btn {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 6px;
-            font-size: 15px;
+            border-radius: 8px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
         
         .add-btn {
-            background: linear-gradient(135deg, #a7c5eb, #b8d4e8);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
         }
         
         .edit-btn {
-            background: #d4c1ec;
+            background: #ffc107;
             color: white;
         }
         
         .btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         
         .view-toggle {
             display: flex;
-            gap: 4px;
-            margin-bottom: 8px;
+            gap: 5px;
+            margin-bottom: 10px;
         }
         
         .toggle-btn {
             flex: 1;
-            padding: 6px;
-            border: 2px solid #a7c5eb;
+            padding: 8px;
+            border: 2px solid #667eea;
             background: white;
-            color: #a7c5eb;
-            border-radius: 6px;
+            color: #667eea;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 11px;
+            font-size: 12px;
         }
         
         .toggle-btn.active {
-            background: #a7c5eb;
+            background: #667eea;
             color: white;
         }
         
@@ -206,44 +202,44 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .date-display {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
-            color: #5a6268;
+            color: #333;
         }
         
         .nav-btn {
-            background: #a7c5eb;
+            background: #667eea;
             color: white;
             border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 6px 12px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 11px;
+            font-size: 12px;
         }
         
         .year-view {
-            padding: 12px;
+            padding: 15px;
         }
         
         .year-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 6px;
-            margin-bottom: 12px;
+            gap: 8px;
+            margin-bottom: 15px;
         }
         
         .month-box {
-            background: #e2e8f0;
-            border: 2px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 8px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 10px;
             cursor: pointer;
             transition: all 0.3s;
-            min-height: 60px;
+            min-height: 70px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -252,99 +248,97 @@
         }
         
         .month-box:hover {
-            background: #cbd5e1;
-            border-color: #a7c5eb;
+            background: #e9ecef;
+            border-color: #667eea;
         }
         
         .month-box.active {
-            background: #a7c5eb;
-            border-color: #a7c5eb;
+            background: #667eea;
+            border-color: #667eea;
             color: white;
         }
         
         .month-name {
             font-weight: 600;
-            font-size: 13px;
-            margin-bottom: 2px;
-            color: #4a5568;
+            font-size: 14px;
+            margin-bottom: 3px;
         }
         
         .month-amount {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 600;
         }
         
         .month-income {
-            color: #68d391;
+            color: #28a745;
         }
         
         .month-expense {
-            color: #fc8181;
+            color: #dc3545;
         }
         
         .calendar-view {
-            padding: 12px;
+            padding: 15px;
         }
         
         .month-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 3px;
-            margin-bottom: 12px;
+            gap: 4px;
+            margin-bottom: 15px;
         }
         
         .week-header {
             text-align: center;
             font-weight: 600;
-            color: #718096;
-            padding: 5px 0;
-            font-size: 9px;
+            color: #666;
+            padding: 6px 0;
+            font-size: 10px;
         }
         
         .day-box {
-            background: #e2e8f0;
-            border: 2px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 5px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 6px;
             cursor: pointer;
             transition: all 0.3s;
-            min-height: 45px;
+            min-height: 50px;
             position: relative;
         }
         
         .day-box:hover {
-            background: #cbd5e1;
-            border-color: #a7c5eb;
+            background: #e9ecef;
+            border-color: #667eea;
         }
         
         .day-box.active {
-            background: #a7c5eb;
-            border-color: #a7c5eb;
+            background: #667eea;
+            border-color: #667eea;
             color: white;
         }
         
         .day-number {
             font-weight: 600;
-            font-size: 11px;
-            margin-bottom: 2px;
-            color: #4a5568;
+            font-size: 12px;
+            margin-bottom: 3px;
         }
         
         .day-amount {
-            font-size: 8px;
+            font-size: 9px;
             font-weight: 600;
         }
         
         .day-income {
-            color: #68d391;
+            color: #28a745;
         }
         
         .day-expense {
-            color: #fc8181;
+            color: #dc3545;
         }
         
         .list-view {
-            padding: 12px;
+            padding: 15px;
         }
         
         .records-list {
@@ -356,11 +350,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            margin-bottom: 6px;
-            background: #e2e8f0;
-            border-radius: 6px;
-            border-left: 4px solid #a7c5eb;
+            padding: 12px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
         }
         
         .record-info {
@@ -369,60 +363,59 @@
         
         .record-type {
             font-weight: 600;
-            margin-bottom: 2px;
-            font-size: 13px;
-            color: #4a5568;
+            margin-bottom: 3px;
+            font-size: 14px;
         }
         
         .record-category {
-            font-size: 10px;
-            color: #718096;
+            font-size: 11px;
+            color: #666;
             margin-bottom: 2px;
         }
         
         .record-amount {
             font-weight: 700;
-            font-size: 15px;
+            font-size: 16px;
         }
         
         .income {
-            border-left-color: #68d391;
+            border-left-color: #28a745;
         }
         
         .expense {
-            border-left-color: #fc8181;
+            border-left-color: #dc3545;
         }
         
         .delete-btn, .edit-btn-small {
-            background: #fc8181;
+            background: #dc3545;
             color: white;
             border: none;
-            padding: 5px 8px;
-            border-radius: 4px;
+            padding: 6px 10px;
+            border-radius: 5px;
             cursor: pointer;
-            margin-left: 6px;
-            font-size: 11px;
+            margin-left: 8px;
+            font-size: 12px;
         }
         
         .edit-btn-small {
-            background: #d4c1ec;
+            background: #ffc107;
         }
         
         .empty-records {
             text-align: center;
-            color: #718096;
-            padding: 24px 12px;
+            color: #666;
+            padding: 30px 15px;
             font-style: italic;
-            font-size: 13px;
+            font-size: 14px;
         }
         
         .summary {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 12px;
-            padding: 10px;
-            background: #e2e8f0;
-            border-radius: 6px;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
         }
         
         .summary-item {
@@ -430,23 +423,23 @@
         }
         
         .summary-value {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
         }
         
         .income-summary {
-            color: #68d391;
+            color: #28a745;
         }
         
         .expense-summary {
-            color: #fc8181;
+            color: #dc3545;
         }
         
-        .category-manager, .export-import-section {
-            margin-top: 10px;
-            padding: 10px;
-            background: #e8f4f8;
-            border-radius: 6px;
+        .category-manager, .export-import-section, .theme-manager {
+            margin-top: 12px;
+            padding: 12px;
+            background: #e8f5e8;
+            border-radius: 8px;
         }
         
         .section-header {
@@ -454,40 +447,38 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
         
         .section-title {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: bold;
-            color: #4a5568;
         }
         
         .section-toggle {
-            font-size: 11px;
-            color: #718096;
+            font-size: 12px;
         }
         
         .category-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
-            margin: 6px 0;
+            gap: 6px;
+            margin: 8px 0;
         }
         
         .category-tag {
-            background: #68d391;
+            background: #28a745;
             color: white;
-            padding: 3px 7px;
-            border-radius: 12px;
-            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 11px;
             cursor: pointer;
             position: relative;
             display: inline-block;
         }
         
         .category-tag .delete-tag {
-            margin-left: 4px;
+            margin-left: 5px;
             cursor: pointer;
             font-weight: bold;
             color: #ff6b6b;
@@ -499,48 +490,44 @@
         
         .add-category-input {
             display: flex;
-            gap: 6px;
-            margin-top: 6px;
+            gap: 8px;
+            margin-top: 8px;
         }
         
         .add-category-input input {
             flex: 1;
-            padding: 6px;
-            border: 1px solid #d1d5db;
-            border-radius: 4px;
-            font-size: 12px;
         }
         
         .add-category-btn {
-            background: #68d391;
+            background: #28a745;
             color: white;
             border: none;
-            padding: 5px 8px;
-            border-radius: 4px;
+            padding: 6px 10px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 11px;
+            font-size: 12px;
         }
         
         .export-import-section {
-            background: #f0f7ff;
+            background: #e8f5f5;
         }
         
         .export-btn, .import-btn {
-            padding: 6px;
-            border: 2px solid #a7c5eb;
+            padding: 8px;
+            border: 2px solid #667eea;
             background: white;
-            color: #a7c5eb;
-            border-radius: 6px;
+            color: #667eea;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 11px;
-            margin: 4px 1px;
+            font-size: 12px;
+            margin: 5px 2px;
             display: inline-block;
-            min-width: 90px;
+            min-width: 100px;
         }
         
         .export-btn:hover, .import-btn:hover {
-            background: #a7c5eb;
+            background: #667eea;
             color: white;
         }
         
@@ -551,29 +538,28 @@
         .export-options {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-top: 8px;
+            gap: 10px;
+            margin-top: 10px;
         }
         
         .export-option {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 5px;
         }
         
         .export-option label {
             font-weight: 500;
-            color: #5a6268;
-            font-size: 13px;
+            color: #333;
+            font-size: 14px;
         }
         
         .export-option select, .export-option input {
             width: 100%;
-            padding: 6px;
-            border: 2px solid #d1d5db;
-            border-radius: 6px;
-            font-size: 13px;
-            background-color: #f8fafc;
+            padding: 8px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
         }
         
         .nav-bar {
@@ -582,9 +568,9 @@
             left: 0;
             right: 0;
             background: white;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #eee;
             display: flex;
-            padding: 8px 0; /* 减少底部导航高度 */
+            padding: 10px 0;
             z-index: 1000;
         }
         
@@ -592,22 +578,22 @@
             flex: 1;
             text-align: center;
             cursor: pointer;
-            padding: 4px;
+            padding: 5px;
         }
         
         .nav-icon {
-            font-size: 18px; /* 减小图标大小 */
+            font-size: 20px;
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
         
         .nav-text {
-            font-size: 11px;
-            color: #718096;
+            font-size: 12px;
+            color: #666;
         }
         
         .nav-item.active .nav-text {
-            color: #a7c5eb;
+            color: #667eea;
             font-weight: bold;
         }
         
@@ -625,17 +611,17 @@
         .modal-content {
             background-color: white;
             margin: 5% auto;
-            padding: 16px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
             width: 90%;
-            max-width: 380px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
         .close {
             color: #aaa;
             float: right;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
             cursor: pointer;
         }
@@ -646,8 +632,148 @@
         
         .modal-buttons {
             display: flex;
-            gap: 6px;
-            margin-top: 12px;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        /* 日视图详情样式 */
+        .day-detail-view {
+            padding: 15px;
+            margin-top: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .day-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .day-detail-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .day-detail-summary {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+        
+        .day-detail-summary-item {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            flex: 1;
+            margin: 0 5px;
+        }
+        
+        .day-detail-amount {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .day-detail-income {
+            color: #28a745;
+        }
+        
+        .day-detail-expense {
+            color: #dc3545;
+        }
+        
+        .day-detail-records {
+            margin-top: 15px;
+        }
+        
+        .day-detail-record-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .day-detail-record-info {
+            flex: 1;
+        }
+        
+        .day-detail-record-type {
+            font-weight: 600;
+            margin-bottom: 3px;
+            font-size: 14px;
+        }
+        
+        .day-detail-record-category {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 2px;
+        }
+        
+        .day-detail-record-description {
+            font-size: 11px;
+            color: #888;
+        }
+        
+        .day-detail-record-amount {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .day-detail-income-record {
+            border-left-color: #28a745;
+        }
+        
+        .day-detail-expense-record {
+            border-left-color: #dc3545;
+        }
+        
+        .day-detail-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        /* 主题切换相关样式 */
+        .theme-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .theme-option {
+            padding: 10px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .theme-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .theme-option.active {
+            border-color: #667eea;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .theme-preview {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 auto 5px;
         }
         
         /* 手机端特殊优化 */
@@ -664,16 +790,16 @@
             }
             
             .header {
-                height: 85px; /* 调整手机端头部高度 */
+                height: 110px;
             }
             
             .content {
-                padding-top: 90px; /* 调整手机端内容顶部内边距 */
-                height: calc(100vh - 90px);
+                padding-top: 120px;
+                height: calc(100vh - 120px);
             }
             
             .nav-section {
-                padding: 8px;
+                padding: 10px;
             }
             
             .view-toggle {
@@ -684,8 +810,8 @@
             .toggle-btn {
                 flex: 1;
                 min-width: 30%;
-                padding: 5px;
-                font-size: 10px;
+                padding: 6px;
+                font-size: 11px;
             }
             
             .date-nav {
@@ -693,34 +819,34 @@
             }
             
             .date-display {
-                font-size: 13px;
+                font-size: 14px;
             }
             
             .nav-btn {
-                padding: 4px 8px;
-                font-size: 10px;
+                padding: 5px 10px;
+                font-size: 11px;
             }
             
             .input-section {
-                padding: 10px;
+                padding: 12px;
             }
             
             .input-group {
-                margin-bottom: 6px;
+                margin-bottom: 8px;
             }
             
             .input-group label {
-                font-size: 12px;
+                font-size: 13px;
             }
             
             .input-group input, .input-group select {
-                padding: 6px;
-                font-size: 12px;
+                padding: 8px;
+                font-size: 13px;
             }
             
             .type-date-input {
                 flex-direction: row;
-                gap: 6px;
+                gap: 8px;
             }
             
             .type-input {
@@ -733,7 +859,7 @@
             
             .amount-category-input {
                 flex-direction: row;
-                gap: 6px;
+                gap: 8px;
             }
             
             .amount-input {
@@ -746,7 +872,7 @@
             
             .desc-add-input {
                 flex-direction: row;
-                gap: 6px;
+                gap: 8px;
                 align-items: flex-end;
             }
             
@@ -763,41 +889,41 @@
             }
             
             .month-box {
-                min-height: 55px;
-                padding: 6px;
+                min-height: 60px;
+                padding: 8px;
             }
             
             .month-name {
-                font-size: 11px;
+                font-size: 12px;
             }
             
             .month-amount {
-                font-size: 8px;
-            }
-            
-            .calendar-view {
-                padding: 8px;
-            }
-            
-            .month-grid {
-                gap: 2px;
-            }
-            
-            .day-box {
-                min-height: 38px;
-                padding: 3px;
-            }
-            
-            .day-number {
                 font-size: 9px;
             }
             
+            .calendar-view {
+                padding: 10px;
+            }
+            
+            .month-grid {
+                gap: 3px;
+            }
+            
+            .day-box {
+                min-height: 40px;
+                padding: 4px;
+            }
+            
+            .day-number {
+                font-size: 10px;
+            }
+            
             .day-amount {
-                font-size: 7px;
+                font-size: 8px;
             }
             
             .list-view {
-                padding: 8px;
+                padding: 10px;
             }
             
             .records-list {
@@ -806,58 +932,58 @@
             }
             
             .record-item {
-                padding: 8px;
-                margin-bottom: 5px;
+                padding: 10px;
+                margin-bottom: 6px;
             }
             
             .record-type {
-                font-size: 12px;
+                font-size: 13px;
             }
             
             .record-category {
-                font-size: 9px;
-            }
-            
-            .record-amount {
-                font-size: 14px;
-            }
-            
-            .delete-btn, .edit-btn-small {
-                padding: 4px 6px;
                 font-size: 10px;
             }
             
-            .summary {
-                margin-bottom: 10px;
-                padding: 8px;
-            }
-            
-            .summary-value {
+            .record-amount {
                 font-size: 15px;
             }
             
-            .category-manager, .export-import-section {
-                padding: 8px;
+            .delete-btn, .edit-btn-small {
+                padding: 5px 8px;
+                font-size: 11px;
+            }
+            
+            .summary {
+                margin-bottom: 12px;
+                padding: 10px;
+            }
+            
+            .summary-value {
+                font-size: 16px;
+            }
+            
+            .category-manager, .export-import-section, .theme-manager {
+                padding: 10px;
             }
             
             .category-tag {
-                font-size: 9px;
-                padding: 2px 5px;
+                font-size: 10px;
+                padding: 3px 6px;
             }
             
             .add-category-input {
                 flex-direction: row;
-                gap: 4px;
+                gap: 5px;
             }
             
             .add-category-btn {
-                padding: 4px 6px;
-                font-size: 10px;
+                padding: 5px 8px;
+                font-size: 11px;
             }
             
             .export-import-section {
                 flex-direction: column;
-                gap: 4px;
+                gap: 5px;
             }
             
             .export-btn, .import-btn {
@@ -865,23 +991,23 @@
             }
             
             .detail-view {
-                padding: 8px;
+                padding: 10px;
             }
             
             .detail-date {
-                font-size: 16px;
+                font-size: 18px;
             }
             
             .detail-stats {
-                gap: 8px;
+                gap: 10px;
             }
             
             .stat-item {
-                padding: 8px;
+                padding: 10px;
             }
             
             .stat-value {
-                font-size: 16px;
+                font-size: 18px;
             }
             
             .detail-calendar-grid {
@@ -890,12 +1016,50 @@
             
             .modal-content {
                 margin: 10% auto;
-                padding: 12px;
+                padding: 15px;
                 width: 95%;
             }
             
             .modal-buttons {
                 flex-direction: column;
+            }
+            
+            .day-detail-view {
+                padding: 10px;
+            }
+            
+            .day-detail-summary-item {
+                padding: 8px;
+                margin: 0 2px;
+            }
+            
+            .day-detail-amount {
+                font-size: 14px;
+            }
+            
+            .day-detail-record-item {
+                padding: 8px;
+                margin-bottom: 6px;
+            }
+            
+            .day-detail-record-type {
+                font-size: 12px;
+            }
+            
+            .day-detail-record-category {
+                font-size: 11px;
+            }
+            
+            .day-detail-record-description {
+                font-size: 10px;
+            }
+            
+            .day-detail-record-amount {
+                font-size: 14px;
+            }
+            
+            .theme-options {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -977,7 +1141,7 @@
                 </div>
                 
                 <div id="listView" class="list-view" style="display: none;">
-                    <h3 class="section-title" style="font-size: 15px; margin-bottom: 8px;">记账记录</h3>
+                    <h3 class="section-title" style="font-size: 16px; margin-bottom: 10px;">记账记录</h3>
                     
                     <div class="summary">
                         <div class="summary-item">
@@ -992,6 +1156,33 @@
                     
                     <div id="recordsList" class="records-list">
                         <div class="empty-records">暂无记账记录</div>
+                    </div>
+                </div>
+                
+                <!-- 日视图详情 -->
+                <div id="dayDetailView" class="day-detail-view">
+                    <div class="day-detail-header">
+                        <div class="day-detail-title" id="dayDetailTitle">2024年1月1日</div>
+                        <button class="nav-btn" onclick="exitDayDetailView()">返回</button>
+                    </div>
+                    
+                    <div class="day-detail-summary">
+                        <div class="day-detail-summary-item">
+                            <div>收入</div>
+                            <div class="day-detail-amount day-detail-income" id="dayDetailIncome">¥0.00</div>
+                        </div>
+                        <div class="day-detail-summary-item">
+                            <div>支出</div>
+                            <div class="day-detail-amount day-detail-expense" id="dayDetailExpense">¥0.00</div>
+                        </div>
+                        <div class="day-detail-summary-item">
+                            <div>结余</div>
+                            <div class="day-detail-amount" id="dayDetailBalance">¥0.00</div>
+                        </div>
+                    </div>
+                    
+                    <div id="dayDetailRecords" class="day-detail-records">
+                        <!-- 日记录将动态生成 -->
                     </div>
                 </div>
             </div>
@@ -1009,6 +1200,39 @@
                     <div class="add-category-input">
                         <input type="text" id="newCategory" placeholder="添加新分类">
                         <button class="add-category-btn" onclick="addCustomCategory()">添加</button>
+                    </div>
+                </div>
+                
+                <div class="theme-manager">
+                    <div class="section-header" onclick="toggleSection('themeManager')">
+                        <div class="section-title">🎨 更换主题风格</div>
+                        <div class="section-toggle">展开</div>
+                    </div>
+                    <div class="theme-options">
+                        <div class="theme-option active" data-theme="default" onclick="selectTheme('default')">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                            <div>默认主题</div>
+                        </div>
+                        <div class="theme-option" data-theme="morandi-grass" onclick="selectTheme('morandi-grass')">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #B8C5A2, #D6C4A8);"></div>
+                            <div>莫兰迪草原</div>
+                        </div>
+                        <div class="theme-option" data-theme="morandi-ocean" onclick="selectTheme('morandi-ocean')">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #A8C2D6, #B8A8C4);"></div>
+                            <div>莫兰迪海洋</div>
+                        </div>
+                        <div class="theme-option" data-theme="morandi-sunset" onclick="selectTheme('morandi-sunset')">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #D6B8A8, #C4A8B8);"></div>
+                            <div>莫兰迪晚霞</div>
+                        </div>
+                        <div class="theme-option" data-theme="morandi-gradient" onclick="selectTheme('morandi-gradient')">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #A8C4D6, #B8D6A8);"></div>
+                            <div>莫兰迪渐变</div>
+                        </div>
+                        <div class="theme-option" data-theme="aurora" onclick="selectTheme('aurora')">
+                            <div class="theme-preview" style="background: linear-gradient(135deg, #A8D6C4, #D6A8C4);"></div>
+                            <div>极光色系</div>
+                        </div>
                     </div>
                 </div>
                 
@@ -1085,7 +1309,7 @@
     <div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeEditModal()">&times;</span>
-            <h2 style="margin-bottom: 12px;">编辑记录</h2>
+            <h2 style="margin-bottom: 15px;">编辑记录</h2>
             <div class="input-group">
                 <label>记账类型</label>
                 <select id="editRecordType">
@@ -1137,6 +1361,7 @@
         let selectedYear = null;
         let editingRecordId = null;
         let currentPage = 1;
+        let currentTheme = localStorage.getItem('currentTheme') || 'default';
 
         // 初始化页面
         function init() {
@@ -1148,6 +1373,7 @@
             updateDisplay();
             renderYearView();
             updateCategoryList();
+            applyTheme(currentTheme);
             
             // 添加导入文件监听器
             document.getElementById('importFile').addEventListener('change', handleFileImport);
@@ -1214,18 +1440,21 @@
                 document.getElementById('yearView').style.display = 'block';
                 document.getElementById('calendarView').style.display = 'none';
                 document.getElementById('listView').style.display = 'none';
+                document.getElementById('dayDetailView').style.display = 'none'; // 隐藏日详情视图
                 renderYearView();
                 updateYearBalance();
             } else if (view === 'calendar') {
                 document.getElementById('yearView').style.display = 'none';
                 document.getElementById('calendarView').style.display = 'block';
                 document.getElementById('listView').style.display = 'none';
+                document.getElementById('dayDetailView').style.display = 'none'; // 隐藏日详情视图
                 renderCalendar();
                 updateMonthBalance();
             } else {
                 document.getElementById('yearView').style.display = 'none';
                 document.getElementById('calendarView').style.display = 'none';
                 document.getElementById('listView').style.display = 'block';
+                document.getElementById('dayDetailView').style.display = 'none'; // 隐藏日详情视图
                 updateListView();
                 updateYearBalance();
             }
@@ -1552,16 +1781,71 @@
             document.getElementById('currentDate').textContent = `${year}年${month + 1}月`;
         }
 
-        // 选择日期（进入详情）
+        // 选择日期（进入日详情视图）
         function selectDate(dateStr) {
             selectedDate = dateStr;
-            enterDetailView(dateStr);
+            enterDayDetailView(dateStr);
         }
 
-        // 进入详情视图（在查看页面中）
-        function enterDetailView(dateStr) {
-            // 这里可以扩展为显示日期详情
-            alert(`查看 ${dateStr} 的详情`);
+        // 进入日详情视图
+        function enterDayDetailView(dateStr) {
+            // 更新日详情视图的标题
+            document.getElementById('dayDetailTitle').textContent = formatDateToDisplay(dateStr);
+            
+            // 获取当天的记录
+            const dayRecords = records.filter(r => r.date === dateStr);
+            
+            // 计算当天的收入、支出和结余
+            let dayIncome = 0;
+            let dayExpense = 0;
+            
+            dayRecords.forEach(record => {
+                if (record.type === 'income') {
+                    dayIncome += record.amount;
+                } else {
+                    dayExpense += record.amount;
+                }
+            });
+            
+            const dayBalance = dayIncome - dayExpense;
+            
+            // 更新统计信息
+            document.getElementById('dayDetailIncome').textContent = `¥${dayIncome.toFixed(2)}`;
+            document.getElementById('dayDetailExpense').textContent = `¥${dayExpense.toFixed(2)}`;
+            document.getElementById('dayDetailBalance').textContent = `¥${dayBalance.toFixed(2)}`;
+            
+            // 生成记录列表
+            const recordsList = document.getElementById('dayDetailRecords');
+            if (dayRecords.length === 0) {
+                recordsList.innerHTML = '<div class="empty-records">当天暂无记账记录</div>';
+            } else {
+                recordsList.innerHTML = dayRecords.map(record => `
+                    <div class="day-detail-record-item ${record.type === 'income' ? 'day-detail-income-record' : 'day-detail-expense-record'}">
+                        <div class="day-detail-record-info">
+                            <div class="day-detail-record-type">${record.type === 'income' ? '💰 收入' : '💸 支出'}</div>
+                            <div class="day-detail-record-category">${record.category}</div>
+                            <div class="day-detail-record-description">${record.description || '无备注'}</div>
+                        </div>
+                        <div class="day-detail-record-amount ${record.type === 'income' ? 'day-detail-income' : 'day-detail-expense'}">
+                            ${record.type === 'income' ? '+' : '-'}¥${record.amount.toFixed(2)}
+                        </div>
+                        <div class="day-detail-actions">
+                            <button class="edit-btn-small" onclick="openEditModal(${record.id})">编辑</button>
+                            <button class="delete-btn" onclick="deleteRecord(${record.id})">×</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            // 显示日详情视图，隐藏其他视图
+            document.getElementById('calendarView').style.display = 'none';
+            document.getElementById('dayDetailView').style.display = 'block';
+        }
+
+        // 退出日详情视图（返回月视图）
+        function exitDayDetailView() {
+            document.getElementById('dayDetailView').style.display = 'none';
+            document.getElementById('calendarView').style.display = 'block';
         }
 
         // 更新列表视图
@@ -1756,6 +2040,12 @@
             return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
         }
 
+        // 将中文日期格式转换为显示格式
+        function formatDateToDisplay(chineseDate) {
+            const parts = chineseDate.split('/');
+            return `${parts[0]}年${parts[1]}月${parts[2]}日`;
+        }
+
         // 导出记录
         function exportRecords(format) {
             // 获取导出类型
@@ -1929,6 +2219,105 @@
                 reader.readAsText(file);
             } else if (file.name.endsWith('.csv')) {
                 reader.readAsText(file);
+            }
+        }
+
+        // 主题切换功能
+        function selectTheme(themeName) {
+            currentTheme = themeName;
+            localStorage.setItem('currentTheme', themeName);
+            applyTheme(themeName);
+            
+            // 更新主题选项的选中状态
+            document.querySelectorAll('.theme-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            document.querySelector(`[data-theme="${themeName}"]`).classList.add('active');
+        }
+
+        // 应用主题
+        function applyTheme(themeName) {
+            const root = document.documentElement;
+            const header = document.querySelector('.header');
+            const addBtn = document.querySelector('.add-btn');
+            const toggleBtn = document.querySelector('.toggle-btn');
+            const navBtn = document.querySelector('.nav-btn');
+            const body = document.body;
+            
+            // 移除所有主题类
+            document.body.classList.remove(
+                'theme-morandi-grass', 
+                'theme-morandi-ocean', 
+                'theme-morandi-sunset', 
+                'theme-morandi-gradient', 
+                'theme-aurora'
+            );
+            
+            switch(themeName) {
+                case 'morandi-grass':
+                    // 莫兰迪草原天空色系
+                    header.style.background = 'linear-gradient(135deg, #B8C5A2, #D6C4A8)';
+                    addBtn.style.background = 'linear-gradient(135deg, #B8C5A2, #D6C4A8)';
+                    toggleBtn.style.borderColor = '#B8C5A2';
+                    toggleBtn.style.color = '#B8C5A2';
+                    navBtn.style.background = '#B8C5A2';
+                    body.style.background = 'linear-gradient(135deg, #B8C5A2, #D6C4A8)';
+                    document.body.classList.add('theme-morandi-grass');
+                    break;
+                    
+                case 'morandi-ocean':
+                    // 莫兰迪海洋色系
+                    header.style.background = 'linear-gradient(135deg, #A8C2D6, #B8A8C4)';
+                    addBtn.style.background = 'linear-gradient(135deg, #A8C2D6, #B8A8C4)';
+                    toggleBtn.style.borderColor = '#A8C2D6';
+                    toggleBtn.style.color = '#A8C2D6';
+                    navBtn.style.background = '#A8C2D6';
+                    body.style.background = 'linear-gradient(135deg, #A8C2D6, #B8A8C4)';
+                    document.body.classList.add('theme-morandi-ocean');
+                    break;
+                    
+                case 'morandi-sunset':
+                    // 莫兰迪晚霞色系
+                    header.style.background = 'linear-gradient(135deg, #D6B8A8, #C4A8B8)';
+                    addBtn.style.background = 'linear-gradient(135deg, #D6B8A8, #C4A8B8)';
+                    toggleBtn.style.borderColor = '#D6B8A8';
+                    toggleBtn.style.color = '#D6B8A8';
+                    navBtn.style.background = '#D6B8A8';
+                    body.style.background = 'linear-gradient(135deg, #D6B8A8, #C4A8B8)';
+                    document.body.classList.add('theme-morandi-sunset');
+                    break;
+                    
+                case 'morandi-gradient':
+                    // 莫兰迪现代渐变风
+                    header.style.background = 'linear-gradient(135deg, #A8C4D6, #B8D6A8)';
+                    addBtn.style.background = 'linear-gradient(135deg, #A8C4D6, #B8D6A8)';
+                    toggleBtn.style.borderColor = '#A8C4D6';
+                    toggleBtn.style.color = '#A8C4D6';
+                    navBtn.style.background = '#A8C4D6';
+                    body.style.background = 'linear-gradient(135deg, #A8C4D6, #B8D6A8)';
+                    document.body.classList.add('theme-morandi-gradient');
+                    break;
+                    
+                case 'aurora':
+                    // 极光色系
+                    header.style.background = 'linear-gradient(135deg, #A8D6C4, #D6A8C4)';
+                    addBtn.style.background = 'linear-gradient(135deg, #A8D6C4, #D6A8C4)';
+                    toggleBtn.style.borderColor = '#A8D6C4';
+                    toggleBtn.style.color = '#A8D6C4';
+                    navBtn.style.background = '#A8D6C4';
+                    body.style.background = 'linear-gradient(135deg, #A8D6C4, #D6A8C4)';
+                    document.body.classList.add('theme-aurora');
+                    break;
+                    
+                default:
+                    // 默认主题
+                    header.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                    addBtn.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                    toggleBtn.style.borderColor = '#667eea';
+                    toggleBtn.style.color = '#667eea';
+                    navBtn.style.background = '#667eea';
+                    body.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                    break;
             }
         }
 
